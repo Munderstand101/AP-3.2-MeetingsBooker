@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="579.0" prefWidth="1123.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerComptableFiche">
+   <children>
+      <Pane layoutX="12.0" layoutY="22.0" prefHeight="200.0" prefWidth="291.0">
+         <children>
+            <ImageView fitHeight="187.0" fitWidth="274.0" layoutX="10.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../images/gsb.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Label fx:id="numFicheLabel" layoutX="342.0" layoutY="33.0" text="Fiche de frais n°" textFill="#bc4003">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
+      <Label fx:id="dateEmbaucheLabel" layoutX="43.0" layoutY="327.0" text="Date d'embauche :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="dateClotureLabel" layoutX="43.0" layoutY="387.0" text="Date clôture :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="etatLabel" layoutX="46.0" layoutY="417.0" text="Etat :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="montantDeclareLabel" layoutX="378.0" layoutY="372.0" text="Montant déclaré :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="adresseVisiteurLabel" layoutX="43.0" layoutY="253.0" text="adresse visiteur">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="nomPrenomLabel" layoutX="43.0" layoutY="231.0" text="nom prénom visiteur">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="cpVilleVisiteurLabel" layoutX="46.0" layoutY="276.0" text="cp ville visiteur">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Button layoutX="378.0" layoutY="487.0" mnemonicParsing="false" onAction="#buttonValiderFicheComptableClick" text="Valider la fiche de frais">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="buttonCloseFicheComptable" layoutX="674.0" layoutY="487.0" mnemonicParsing="false" onAction="#buttonCloseFicheComptableClick" prefHeight="44.0" prefWidth="228.0" text="Quitter">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <TableView fx:id="tableDétailFicheComptable" layoutX="337.0" layoutY="91.0" prefHeight="200.0" prefWidth="736.0">
+        <columns>
+          <TableColumn fx:id="colLibelleTypeFrais" prefWidth="91.0" sortable="false" text="Forfait" />
+          <TableColumn fx:id="colTarifTypeFrais" prefWidth="109.0" text="Tarif" />
+            <TableColumn fx:id="colQuantiteDeclaree" prefWidth="119.0" text="Quantité déclarée" />
+            <TableColumn fx:id="colTotalDeclaree" prefWidth="177.0" text="Total déclarée" />
+            <TableColumn prefWidth="122.0" text="Quantité Valider" />
+            <TableColumn prefWidth="112.0" text="Montant Total" />
+        </columns>
+      </TableView>
+      <TextField fx:id="portTextField" layoutX="542.0" layoutY="406.0" prefHeight="25.0" prefWidth="186.0" />
+      <Label fx:id="montantDeclareLabel1" layoutX="379.0" layoutY="403.0" text="Quantité Valider :">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
