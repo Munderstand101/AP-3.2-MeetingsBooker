@@ -2,10 +2,10 @@ package model.DAO;
 
 
 import java.sql.ResultSet;
-public class FicheFraisDAO {
+public class LoueurDAO {
 	
 	/**
-	 * Méthode permettant de récupérer les fiches de frais
+	 * Mï¿½thode permettant de rï¿½cupï¿½rer les fiches de frais
 	 * @return ResultSet (la liste des fiches de frais
 	 */
 	 public static ResultSet lesFichesFrais()
@@ -21,7 +21,7 @@ public class FicheFraisDAO {
 
 	 
 	 /**
-	  * Méthode permettant de récupérer les lignes d'une fiche de frais
+	  * Mï¿½thode permettant de rï¿½cupï¿½rer les lignes d'une fiche de frais
 	  * @param unIdFiche
 	  * @return ResultSet (la liste des lignes d'une fiche de frais
 	  */
@@ -36,9 +36,9 @@ public class FicheFraisDAO {
 	
 	 
 	 /**
-	  * Méthode permettant de modifier l'état d'une fiche de frais
+	  * Mï¿½thode permettant de modifier l'ï¿½tat d'une fiche de frais
 	  * @param unIdFiche
-	  * @param nouvelEtat (code état)
+	  * @param nouvelEtat (code ï¿½tat)
 	  * @return Interger 
 	  */
 	 public static Integer changerEtat(int unIdFiche , String nouvelEtat)

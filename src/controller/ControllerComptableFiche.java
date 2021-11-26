@@ -19,7 +19,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import model.DAO.FicheFraisDAO;
+import model.DAO.LoueurDAO;
 import model.DTO.FicheFrais;
 import model.DTO.LigneFrais;
 
@@ -125,7 +125,7 @@ public class ControllerComptableFiche implements Initializable  {
 	public void buttonValiderFicheComptableClick(ActionEvent e) {
 		if( ficheActive.getEtat().compareTo("EC")==0) {
 		
-			Integer reponse = FicheFraisDAO.changerEtat(ficheActive.getIdFiche() , "VA");
+			Integer reponse = LoueurDAO.changerEtat(ficheActive.getIdFiche() , "VA");
 			if(reponse == 1) {
 				ficheActive.changerEtatFiche("VA");
 				etatLabel.setText("Etat : "+ ficheActive.getEtatLong());

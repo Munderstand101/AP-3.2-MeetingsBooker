@@ -54,43 +54,54 @@ public class ControllerIdentification implements Initializable {
 			 FXMLLoader loader = new FXMLLoader();
 			 messageConnexionLabel.setText("");
 			 
-			 
-			 if(rs.getNString("statut").equals("comptable")) {
-			 		loader.setLocation(Main.class.getResource("../view/viewComptableListeFiches.fxml"));
+
+			 /*
+			 TODO
+			 COMMERCIAL
+			 commerciaux et administrateur
+			 commercial
+			 ControllerClientsFiche
+ControllerFicheClient
+
+viewClientsFiche
+			  */
+
+			 if(rs.getNString("statut").equals("commerciaux") || rs.getNString("statut").equals("administrateur") ) {
+			 		loader.setLocation(Main.class.getResource("../view/viewGestionLoueurs.fxml"));
 			 		Pane comptableListeFichesLayout = (Pane) loader.load();
 	            	Stage comptableListeFichesStage = new Stage();
 			 		Scene comptableListeFichesScene = new Scene(comptableListeFichesLayout);
 			 		comptableListeFichesStage.setScene(comptableListeFichesScene);
 	           		
-			 		comptableListeFichesStage.setTitle("GSB Gestion des frais - Compta Fiche de frais");
+			 		comptableListeFichesStage.setTitle("MeetingsBooker - commerciaux");
 			 		comptableListeFichesStage.initModality(Modality.APPLICATION_MODAL);		 		
 			 		comptableListeFichesStage.show();
 			 	}   
-			 
-			 if(rs.getNString("statut").equals("gestion")) {
-			 		loader.setLocation(Main.class.getResource("../view/viewGestionaireListeFiches.fxml"));
+
+			 if(rs.getNString("statut").equals("loueurs") || rs.getNString("statut").equals("administrateur")) {
+			 		loader.setLocation(Main.class.getResource("../view/viewLoueurs.fxml"));
 			 		Pane comptableListeFichesLayout = (Pane) loader.load();
 	            	Stage comptableListeFichesStage = new Stage();
 			 		Scene comptableListeFichesScene = new Scene(comptableListeFichesLayout);
 			 		comptableListeFichesStage.setScene(comptableListeFichesScene);
 	           		
-			 		comptableListeFichesStage.setTitle("GSB Gestion des frais - gestion");
+			 		comptableListeFichesStage.setTitle("MeetingsBooker - loueurs");
 			 		comptableListeFichesStage.initModality(Modality.APPLICATION_MODAL);		 		
 			 		comptableListeFichesStage.show();
 			 	}   
-			 
-			 if(rs.getNString("statut").equals("visiteur")) {
-			 		loader.setLocation(Main.class.getResource("../view/viewVisiteurListeFiches.fxml"));
-			 		Pane comptableListeFichesLayout = (Pane) loader.load();
-	            	Stage comptableListeFichesStage = new Stage();
-			 		Scene comptableListeFichesScene = new Scene(comptableListeFichesLayout);
-			 		comptableListeFichesStage.setScene(comptableListeFichesScene);
-	           		
-			 		comptableListeFichesStage.setTitle("GSB Gestion des frais - visiteur");
-			 		comptableListeFichesStage.initModality(Modality.APPLICATION_MODAL);		 		
-			 		comptableListeFichesStage.show();
+
+			 if(rs.getNString("statut").equals("réservants")) {
+			 		loader.setLocation(Main.class.getResource("../view/viewRéservants.fxml"));
+			 		Pane reservantsLayout = (Pane) loader.load();
+	            	Stage reservantsStage = new Stage();
+			 		Scene reservantsScene = new Scene(reservantsLayout);
+					 reservantsStage.setScene(reservantsScene);
+
+					 reservantsStage.setTitle("MeetingsBooker - réservants");
+					 reservantsStage.initModality(Modality.APPLICATION_MODAL);
+					 reservantsStage.show();
 			 	}   
-			 
+
 			 
 			 
 			}

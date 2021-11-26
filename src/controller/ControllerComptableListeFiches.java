@@ -19,7 +19,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
-import model.DAO.FicheFraisDAO;
+import model.DAO.LoueurDAO;
 import model.DAO.UtilisateurDAO;
 import model.DTO.FicheFrais;
 
@@ -29,7 +29,7 @@ import model.DTO.Utilisateur;
 public class ControllerComptableListeFiches {
 
 	/**
-	 * Les variables du fichier FXML associé
+	 * Les variables du fichier FXML associï¿½
 	 */
 	 @FXML 	private TableView<FicheFrais> tableListeFichesComptable;
 	 @FXML 	private TableColumn<FicheFrais , Integer > colIdFiche;
@@ -40,13 +40,13 @@ public class ControllerComptableListeFiches {
 	 
 	
 	 
-	 //Déclaration de l'ObservableList nécessaire au remplissage de la tableView
+	 //Dï¿½claration de l'ObservableList nï¿½cessaire au remplissage de la tableView
 	 private ObservableList<FicheFrais> data = FXCollections.observableArrayList();
 	 
 	 
 	 /**
-	  * Ouverture de la fiche sélectionnée
-	  * Click sur le bouton "Ouvrir fiche sélectionnée"
+	  * Ouverture de la fiche sï¿½lectionnï¿½e
+	  * Click sur le bouton "Ouvrir fiche sï¿½lectionnï¿½e"
 	  * @param e
 	  */
 		@FXML	private void buttonOuvrirFicheComptableClick(ActionEvent e) {
@@ -83,8 +83,8 @@ public class ControllerComptableListeFiches {
 			
 			}else {
 				Alert alert = new Alert(Alert.AlertType.ERROR);
-				alert.setHeaderText("Sélectionnez une fiche de frais");
-				alert.getDialogPane().setContentText("Vous devez sélectionner une fiche de frais afin de la visualiser");
+				alert.setHeaderText("Sï¿½lectionnez une fiche de frais");
+				alert.getDialogPane().setContentText("Vous devez sï¿½lectionner une fiche de frais afin de la visualiser");
 				alert.showAndWait();
 			}
 		
@@ -99,7 +99,7 @@ public class ControllerComptableListeFiches {
 	 private void remplissagetableViewListeFichesComptable() {
 		 try {
 			 			 
-			 ResultSet rsListeFichesComptable = FicheFraisDAO.lesFichesFrais();
+			 ResultSet rsListeFichesComptable = LoueurDAO.lesFichesFrais();
 			 
 			
 			 ArrayList<LigneFrais> lesLignesFrais;
@@ -117,7 +117,7 @@ public class ControllerComptableListeFiches {
 				 FicheFrais uneFicheFrais = new FicheFrais(rsListeFichesComptable.getInt(1) ,rsListeFichesComptable.getInt(3) ,rsListeFichesComptable.getInt(4)  ,rsListeFichesComptable.getDate(5)  ,rsListeFichesComptable.getDate(6)  ,rsListeFichesComptable.getString(7) , rsListeFichesComptable.getFloat(8), utilisateur);
 				 
 				 
-				 ResultSet rsLesLignes = FicheFraisDAO.lesLignesFicheFrais(rsListeFichesComptable.getInt(1));
+				 ResultSet rsLesLignes = LoueurDAO.lesLignesFicheFrais(rsListeFichesComptable.getInt(1));
 				 
 				 
 			

@@ -15,7 +15,7 @@ public class DBConnex {
 		
 		Statement statement = null;
 		 try {
-				Connection	connection = DriverManager.getConnection("jdbc:mariadb://localhost:3307/MeetingsBooker?user=root&password=");
+				Connection	connection = DriverManager.getConnection("jdbc:mariadb://localhost:3307/MeetingsBooker2?user=root&password=");
 			
 				statement = connection.createStatement();
 				
@@ -41,7 +41,7 @@ public class DBConnex {
 		
 		ResultSet rs = null ;
 		try {
-			String sql ="SELECT id , nom , prenom, login, statut  FROM utilisateur where login = '" + login + "' and mdp = '"+ mdp +"'";
+			String sql ="SELECT idUtilisateur , nom , prenom, login, statut  FROM utilisateur where login = '" + login + "' and mdp = '"+ mdp +"'";
 			rs = unStatement.executeQuery(sql);
 			if (!rs.next()) {
 				rs =null;
