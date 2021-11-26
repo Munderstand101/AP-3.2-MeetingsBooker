@@ -67,7 +67,7 @@ viewClientsFiche
 			  */
 
 			 if(rs.getNString("statut").equals("commerciaux") || rs.getNString("statut").equals("administrateur") ) {
-			 		loader.setLocation(Main.class.getResource("../view/viewGestionLoueurs.fxml"));
+			 		loader.setLocation(Main.class.getResource("../view/viewListeFichesClients.fxml"));
 			 		Pane comptableListeFichesLayout = (Pane) loader.load();
 	            	Stage comptableListeFichesStage = new Stage();
 			 		Scene comptableListeFichesScene = new Scene(comptableListeFichesLayout);
@@ -77,7 +77,7 @@ viewClientsFiche
 			 		comptableListeFichesStage.initModality(Modality.APPLICATION_MODAL);		 		
 			 		comptableListeFichesStage.show();
 			 	}   
-
+/*
 			 if(rs.getNString("statut").equals("loueurs") || rs.getNString("statut").equals("administrateur")) {
 			 		loader.setLocation(Main.class.getResource("../view/viewLoueurs.fxml"));
 			 		Pane comptableListeFichesLayout = (Pane) loader.load();
@@ -101,7 +101,7 @@ viewClientsFiche
 					 reservantsStage.initModality(Modality.APPLICATION_MODAL);
 					 reservantsStage.show();
 			 	}   
-
+*/
 			 
 			 
 			}
@@ -117,23 +117,43 @@ viewClientsFiche
 	}
 
 	/**
-	 * Fermeture de l'application associ�e au click sur le boton quitter
+	 * Methode associee a l'evenement click sur le bouton valider
+	 * @param e
+	 */
+	@FXML	protected void buttonOuvrirLaConfigurationClick(ActionEvent e) {
+
+	/*	FXMLLoader loader = new FXMLLoader();
+
+		loader.setLocation(Main.class.getResource("../view/viewConfiguration.fxml"));
+		Pane configurationLayout = (Pane) loader.load();
+		Stage configurationStage = new Stage();
+		Scene configurationScene = new Scene(configurationLayout);
+		configurationStage.setScene(configurationScene);
+
+		configurationStage.setTitle("MeetingsBooker - configuration");
+		configurationStage.initModality(Modality.APPLICATION_MODAL);
+		configurationStage.show();*/
+
+	}
+
+
+	/**
+	 * Fermeture de l'application associée au clic sur le bouton quitter
 	 * @param e
 	 */
 	@FXML
-	protected void quitterIdentificationButton(ActionEvent e) {
+	protected void buttonQuitterIdentificationClick(ActionEvent e) {
 		Platform.exit();
-		
 	}
 
 	/**
-	 * Valeurs par d�faut pour la connexion au SGBD
-	 * A l'inicilisation du contr�leur 
+	 * Valeurs par défaut pour la connexion au SGBD
+	 * A l'initialisation du controleur
 	 ***/
 	@Override
 	public void initialize(URL location , ResourceBundle ressources) {
-		serveurTextField.setText("127.0.0.1");
-		portTextField.setText("3306");
+//		serveurTextField.setText("127.0.0.1");
+//		portTextField.setText("3306");
 	}
 	
 	

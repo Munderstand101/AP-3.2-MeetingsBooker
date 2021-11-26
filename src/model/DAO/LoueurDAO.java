@@ -3,53 +3,39 @@ package model.DAO;
 
 import java.sql.ResultSet;
 public class LoueurDAO {
-	
-	/**
-	 * M�thode permettant de r�cup�rer les fiches de frais
-	 * @return ResultSet (la liste des fiches de frais
-	 */
-	 public static ResultSet lesFichesFrais()
-     {
-		 		 
-	     String requete = "SELECT *  FROM fichefrais order by annee desc , mois desc";
-                 
-         return DBConnex.getRS(requete, DBConnex.connexion());
- 		
- 		
-     }
-	 
 
-	 
-	 /**
-	  * M�thode permettant de r�cup�rer les lignes d'une fiche de frais
-	  * @param unIdFiche
-	  * @return ResultSet (la liste des lignes d'une fiche de frais
-	  */
-	 public static ResultSet lesLignesFicheFrais(int unIdFiche)
-     {
-		 		 
-	     String requete = "SELECT lignefrais.*, libelle , montant  FROM lignefrais join typefrais on lignefrais.idTypeFrais = typeFrais.id  where idFiche = " + unIdFiche ;
-                 
-         return DBConnex.getRS(requete, DBConnex.connexion());
- 		
-     }
-	
-	 
-	 /**
-	  * M�thode permettant de modifier l'�tat d'une fiche de frais
-	  * @param unIdFiche
-	  * @param nouvelEtat (code �tat)
-	  * @return Interger 
-	  */
-	 public static Integer changerEtat(int unIdFiche , String nouvelEtat)
-     {
-		 		 
-	     String requete = "update ficheFrais set idEtat = '" + nouvelEtat + "' where idFiche = " + unIdFiche ;
-                 
-         return DBConnex.noQuery(requete, DBConnex.connexion());
- 		
- 		
-     }
-	 
-	 
+	/**
+	 * Méthode dpoure récupération les loueurs
+	 * @return ResultSet (la liste des loueurs)
+	 **/
+	public static ResultSet lesLoueurs()
+	{
+		String requete = "SELECT * FROM `loueur`";
+		return DBConnex.getRS(requete, DBConnex.connexion());
+	}
+
+	/**
+	 * Méthode utilisée pour récupérer un loueur
+	 * @param unIdLoueur
+	 * @return ResultSet (la liste des lignes d'une feuille de dépenses
+	 */
+	public static ResultSet leLoueur(int unIdLoueur)
+	{
+		String requete = "SELECT * FROM `loueur` WHERE `loueur`.`idLoueur` = "+ unIdLoueur;
+		return DBConnex.getRS(requete, DBConnex.connexion());
+	}
+
+
+	/**
+	 * Méthode permettant de modifier l'état d'une fiche de frais
+	 * @param unIdLoueur
+	 * @param nouvelEtat (code �tat)
+	 * @return Interger
+	 */
+	public static Integer changerEtatContact(int unIdLoueur , String nouvelEtat)
+	{
+		String requete = "UPDATE `loueur` SET `contact?` = '" + nouvelEtat + "' WHERE `loueur`.`idLoueur` = " + unIdLoueur ;
+		return DBConnex.noQuery(requete, DBConnex.connexion());
+	}
+
 }

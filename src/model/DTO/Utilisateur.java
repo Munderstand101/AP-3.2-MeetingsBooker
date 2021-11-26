@@ -18,7 +18,7 @@ public class Utilisateur {
     private String cp;
     private String ville;
     private Date dateEmbauche;
-    private ArrayList<FicheFrais> mesFiches;
+//    private ArrayList<FicheFrais> mesFiches;
     
 
     public Utilisateur(String unId, String unNom , String unPrenom  , String unLogin , String unMdp , String unStatut ,  String uneAdresse , String unCp , String uneVille , Date uneDateEmb)
@@ -33,7 +33,7 @@ public class Utilisateur {
         cp = unCp;
         ville = uneVille;
         dateEmbauche = uneDateEmb;
-        mesFiches = new ArrayList<FicheFrais>();
+//        mesFiches = new ArrayList<FicheFrais>();
     }
 
 
@@ -67,14 +67,14 @@ public class Utilisateur {
 	}
 
 
-	public ArrayList<FicheFrais> getMesFiches() {
-		return mesFiches;
-	}
-
-
-	public void setMesFiches(ArrayList<FicheFrais> mesFiches) {
-		this.mesFiches = mesFiches;
-	}
+//	public ArrayList<FicheFrais> getMesFiches() {
+//		return mesFiches;
+//	}
+//
+//
+//	public void setMesFiches(ArrayList<FicheFrais> mesFiches) {
+//		this.mesFiches = mesFiches;
+//	}
 
 
 	public void setId(String id) {
@@ -154,10 +154,10 @@ public class Utilisateur {
         return cp + " " +  ville;
     }
 
-    public ArrayList<FicheFrais> getFichesDeFrais()
-    {
-        return mesFiches;
-    }
+//    public ArrayList<FicheFrais> getFichesDeFrais()
+//    {
+//        return mesFiches;
+//    }
    
     public String getStatut() {
 		return statut;

@@ -17,12 +17,12 @@
 				<Font size="25.0" />
 			</font>
 		</Button>
-		<Button layoutX="404.0" layoutY="373.0" mnemonicParsing="false" onAction="#quitterIdentificationButton" prefHeight="54.0" prefWidth="146.0" text="Quitter">
+		<Button layoutX="404.0" layoutY="373.0" mnemonicParsing="false" onAction="#buttonQuitterIdentificationClick" prefHeight="54.0" prefWidth="146.0" text="Quitter">
 			<font>
 				<Font size="25.0" />
 			</font>
 		</Button>
-		<Label layoutX="338.0" layoutY="19.0" text="Identification">
+		<Label layoutX="138.0" layoutY="33.0" text="| Identification">
 			<font>
 				<Font size="48.0" />
 			</font>
@@ -51,15 +51,11 @@
          <font>
             <Font size="18.0" />
          </font></Label>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="30.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../mblogo1.png" />
+            <Image url="@../../images/mblogo2.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" layoutY="63.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../../../meetingsbooker-com-squarelogo-1564047402282.png" />
-         </image>
-      </ImageView>
+      <Button layoutX="557.0" layoutY="21.0" mnemonicParsing="false" onAction="#buttonOuvrirLaConfigurationClick" text="Configuration" />
 	</children>
 </Pane>

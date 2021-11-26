@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="552.0" prefWidth="985.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerListeFichesClients">
+    <children>
+        <Button id="btnOuvrirFicheComptable" layoutX="669.0" layoutY="250.0" mnemonicParsing="false" onAction="#buttonOuvrirFicheComptableClick" prefHeight="28.0" prefWidth="182.0" text="Ouvrir fiche sélectionnée" textAlignment="CENTER">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+        <Button id="closeButtonListeFichesComptable" fx:id="closeButtonListeFichesComptable" layoutX="858.0" layoutY="250.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonCloseListeFichesComptableClick" prefHeight="28.0" prefWidth="98.0" text="Quitter" textAlignment="CENTER">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Button>
+        <TableView fx:id="tableListeFichesComptable" layoutX="23.0" layoutY="71.0" prefHeight="221.0" prefWidth="640.0">
+            <columns>
+                <TableColumn fx:id="idLoueur" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="IdEntreprise" prefWidth="100.0" text="IdEntreprise" />
+                <TableColumn fx:id="nom" editable="false" prefWidth="100.0" sortable="false" text="Nom" />
+                <TableColumn fx:id="Prenom" prefWidth="100.0" text="prenom" />
+            <TableColumn fx:id="contact" prefWidth="60.0" text="Etat" />
+            <TableColumn fx:id="telContact" prefWidth="100.0" text="Tell" />
+            <TableColumn fx:id="mailContact" prefWidth="100.0" text="Mail" />
+            </columns>
+        </TableView>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="23.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../images/mblogo1.png" />
+         </image>
+      </ImageView>
+      <Pane blendMode="RED" layoutY="480.0" prefHeight="72.0" prefWidth="985.0" style="-fx-background-color: White;">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Pane>
+    </children>
+</AnchorPane>
