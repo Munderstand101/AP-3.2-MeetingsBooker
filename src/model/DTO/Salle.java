@@ -8,7 +8,7 @@ public class Salle {
     private String longueur;
     private String surface;
     private String hauteur;
-    private int capacité;
-    private int tarifDemiJournée;
+    private int capacite;
+    private int tarifDemiJournee;
     private int idLieu;
 }

@@ -89,10 +89,22 @@ public class ControllerIdentification implements Initializable {
 			 		comptableListeFichesStage.setTitle("GSB Gestion des frais - visiteur");
 			 		comptableListeFichesStage.initModality(Modality.APPLICATION_MODAL);		 		
 			 		comptableListeFichesStage.show();
-			 	}   
-			 
-			 
-			 
+			 	}
+
+				if(rs.getNString("statut").equals("commerciaux")) {
+					loader.setLocation(Main.class.getResource("../view/viewLieux.fxml"));
+					Pane lieuxLayout = (Pane) loader.load();
+					Stage lieuxStage = new Stage();
+					Scene lieuxScene = new Scene(lieuxLayout);
+					lieuxStage.setScene(lieuxScene);
+
+					lieuxStage.setTitle("GSB Gestion des frais - visiteur");
+					lieuxStage.initModality(Modality.APPLICATION_MODAL);
+					lieuxStage.show();
+				}
+
+
+
 			}
 			else {
 				messageConnexionLabel.setText("Login ou mot de passe incorrect !");

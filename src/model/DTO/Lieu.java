@@ -3,6 +3,7 @@ package model.DTO;
 public class Lieu {
 
     private String idVille;
+    private String idEntreprise;
 
     private String idLieu;
     private String libelleLieu;
@@ -12,12 +13,13 @@ public class Lieu {
     private String nbEtoiles;
     private String descriptif;
 
-    public Lieu(String pidVille, String pidLieu, String plibelleLieu, String padresseLieu, String pdescriptif){
+    public Lieu(String pidVille, String pidLieu, String plibelleLieu, String padresseLieu, String pdescriptif, String pidEntreprise){
         this.idVille=pidVille;
         this.idLieu=pidLieu;
         this.libelleLieu=plibelleLieu;
         this.adresseLieu=padresseLieu;
         this.descriptif=pdescriptif;
+        this.idEntreprise=pidEntreprise;
     }
 
     public String getIdVille() {
@@ -74,5 +76,13 @@ public class Lieu {
 
     public void setDescriptif(String descriptif) {
         this.descriptif = descriptif;
+    }
+
+    public String getIdEntreprise() {
+        return idEntreprise;
+    }
+
+    public void setIdEntreprise(String idEntreprise) {
+        this.idEntreprise = idEntreprise;
     }
 }
