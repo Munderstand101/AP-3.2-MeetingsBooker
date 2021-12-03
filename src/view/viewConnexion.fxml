@@ -53,7 +53,7 @@
          </font></Label>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../images/mblogo2.png" />
+            <Image url="@../res/images/mblogo2.png" />
          </image>
       </ImageView>
       <Button layoutX="557.0" layoutY="21.0" mnemonicParsing="false" onAction="#buttonOuvrirLaConfigurationClick" text="Configuration" />

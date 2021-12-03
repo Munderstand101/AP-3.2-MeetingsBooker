@@ -122,11 +122,11 @@ viewClientsFiche
 	 */
 	@FXML	protected void buttonOuvrirLaConfigurationClick(ActionEvent e) {
 
-	/*	FXMLLoader loader = new FXMLLoader();
+	/*	FXMLLoader loader = new FXMLLoader();;
+		Stage configurationStage = new Stage();
 
 		loader.setLocation(Main.class.getResource("../view/viewConfiguration.fxml"));
-		Pane configurationLayout = (Pane) loader.load();
-		Stage configurationStage = new Stage();
+		Pane configurationLayout = (Pane) loader.load()
 		Scene configurationScene = new Scene(configurationLayout);
 		configurationStage.setScene(configurationScene);
 
