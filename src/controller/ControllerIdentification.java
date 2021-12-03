@@ -1,10 +1,13 @@
 package controller;
 
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
+
+import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.util.ResourceBundle;
@@ -120,19 +123,27 @@ viewClientsFiche
 	 * Methode associee a l'evenement click sur le bouton valider
 	 * @param e
 	 */
-	@FXML	protected void buttonOuvrirLaConfigurationClick(ActionEvent e) {
+	@FXML	protected void buttonOuvrirLaConfigurationClick(ActionEvent event) {
 
-	/*	FXMLLoader loader = new FXMLLoader();;
-		Stage configurationStage = new Stage();
 
-		loader.setLocation(Main.class.getResource("../view/viewConfiguration.fxml"));
-		Pane configurationLayout = (Pane) loader.load()
-		Scene configurationScene = new Scene(configurationLayout);
-		configurationStage.setScene(configurationScene);
+		try {
+			FXMLLoader loader = new FXMLLoader();;
+			Stage configurationStage = new Stage();
 
-		configurationStage.setTitle("MeetingsBooker - configuration");
-		configurationStage.initModality(Modality.APPLICATION_MODAL);
-		configurationStage.show();*/
+			loader.setLocation(Main.class.getResource("../view/viewConfiguration.fxml"));
+			Pane configurationLayout = (Pane) loader.load();
+			Scene configurationScene = new Scene(configurationLayout);
+			configurationStage.setScene(configurationScene);
+
+			configurationStage.setTitle("MeetingsBooker - configuration");
+			configurationStage.initModality(Modality.APPLICATION_MODAL);
+			configurationStage.show();
+		}
+		catch (IOException e) {
+			e.printStackTrace();
+		}
+
+
 
 	}
 
@@ -152,8 +163,8 @@ viewClientsFiche
 	 ***/
 	@Override
 	public void initialize(URL location , ResourceBundle ressources) {
-//		serveurTextField.setText("127.0.0.1");
-//		portTextField.setText("3306");
+		loginTextField.setText("valentin");
+		mdpPasswordField.setText("valentin");
 	}
 	
 	

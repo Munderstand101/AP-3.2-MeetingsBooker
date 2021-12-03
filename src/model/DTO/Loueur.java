@@ -1,5 +1,8 @@
 package model.DTO;
 
+import java.sql.Date;
+import java.util.ArrayList;
+
 public class Loueur {
 
 
@@ -7,20 +10,32 @@ public class Loueur {
     private int IdEntreprise;
     private String Nom;
     private String Prenom;
-    private boolean contact;
+    private Boolean contact;
     private String telContact;
     private String mailContact;
+    private Utilisateur user;
+    private Entreprise entreprise;
 
-
-    public Loueur(int idLoueur, int idEntreprise, String nom, String prenom, boolean contact, String telContact, String mailContact) {
+    public Loueur(int idLoueur, int idEntreprise, String nom, String prenom, Boolean contact, String telContact, String mailContact, Utilisateur user, Entreprise entreprise) {
         this.idLoueur = idLoueur;
-        IdEntreprise = idEntreprise;
-        Nom = nom;
-        Prenom = prenom;
+        this.IdEntreprise = idEntreprise;
+        this.Nom = nom;
+        this.Prenom = prenom;
         this.contact = contact;
         this.telContact = telContact;
         this.mailContact = mailContact;
+        this.user = user;
+        this.entreprise = entreprise;
     }
+
+    public Boolean getContact() {
+        return contact;
+    }
+
+    public void setContact(Boolean contact) {
+        this.contact = contact;
+    }
+
 
     public int getIdLoueur() {
         return idLoueur;

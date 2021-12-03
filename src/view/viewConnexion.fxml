@@ -5,57 +5,39 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="466.0" prefWidth="669.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerIdentification">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="210.0" prefWidth="402.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerIdentification">
 
 	<children>
-		<TextField fx:id="serveurTextField" layoutX="313.0" layoutY="157.0" prefHeight="25.0" prefWidth="186.0" />
-		<TextField fx:id="portTextField" layoutX="313.0" layoutY="200.0" prefHeight="25.0" prefWidth="186.0" />
-		<TextField fx:id="loginTextField" layoutX="313.0" layoutY="242.0" prefHeight="25.0" prefWidth="186.0" />
-		<PasswordField fx:id="mdpPasswordField" layoutX="313.0" layoutY="284.0" prefHeight="25.0" prefWidth="186.0" />
-		<Button layoutX="163.0" layoutY="373.0" mnemonicParsing="false" onAction="#buttonValiderIdentificationClick" prefHeight="54.0" prefWidth="146.0" text="Valider">
+		<TextField fx:id="loginTextField" layoutX="161.0" layoutY="64.0" prefHeight="25.0" prefWidth="186.0" />
+		<PasswordField fx:id="mdpPasswordField" layoutX="161.0" layoutY="106.0" prefHeight="25.0" prefWidth="186.0" />
+		<Button layoutX="248.0" layoutY="167.0" mnemonicParsing="false" onAction="#buttonValiderIdentificationClick" prefHeight="27.0" prefWidth="60.0" text="Valider" />
+		<Button layoutX="319.0" layoutY="167.0" mnemonicParsing="false" onAction="#buttonQuitterIdentificationClick" prefHeight="27.0" prefWidth="60.0" text="Quitter" />
+		<Label layoutX="64.0" layoutY="16.0" text="| Identification">
 			<font>
-				<Font size="25.0" />
-			</font>
-		</Button>
-		<Button layoutX="404.0" layoutY="373.0" mnemonicParsing="false" onAction="#buttonQuitterIdentificationClick" prefHeight="54.0" prefWidth="146.0" text="Quitter">
-			<font>
-				<Font size="25.0" />
-			</font>
-		</Button>
-		<Label layoutX="138.0" layoutY="33.0" text="| Identification">
-			<font>
-				<Font size="48.0" />
+				<Font size="24.0" />
 			</font>
 		</Label>
-		<Label alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="170.0" layoutY="159.0" prefHeight="21.0" prefWidth="119.0" text="Serveur MySql : ">
+
+		<Label alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="18.0" layoutY="108.0" prefHeight="21.0" prefWidth="119.0" text="Mot de passe :">
 			<font>
 				<Font size="15.0" />
 			</font>
 		</Label>
-		<Label alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="170.0" layoutY="286.0" prefHeight="21.0" prefWidth="119.0" text="Mot de passe :">
+		<Label alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="18.0" layoutY="66.0" prefHeight="21.0" prefWidth="119.0" text="Login :">
 			<font>
 				<Font size="15.0" />
 			</font>
 		</Label>
-		<Label alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="170.0" layoutY="244.0" prefHeight="21.0" prefWidth="119.0" text="Login :">
-			<font>
-				<Font size="15.0" />
-			</font>
-		</Label>
-		<Label alignment="CENTER_RIGHT" contentDisplay="CENTER" layoutX="170.0" layoutY="202.0" prefHeight="21.0" prefWidth="119.0" text="Port :">
-			<font>
-				<Font size="15.0" />
-			</font>
-		</Label>
-      <Label id="messageConnexionLabel" fx:id="messageConnexionLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="2.0" layoutY="328.0" prefHeight="27.0" prefWidth="669.0" textFill="RED">
+
+      <Label id="messageConnexionLabel" fx:id="messageConnexionLabel" alignment="CENTER" contentDisplay="CENTER" layoutX="29.0" layoutY="140.0" prefHeight="27.0" prefWidth="317.0" textFill="RED">
          <font>
             <Font size="18.0" />
          </font></Label>
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="14.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="35.0" fitWidth="72.0" layoutX="14.0" layoutY="17.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../res/images/mblogo2.png" />
+            <Image url="@../res/images/mblogo3.png" />
          </image>
       </ImageView>
-      <Button layoutX="557.0" layoutY="21.0" mnemonicParsing="false" onAction="#buttonOuvrirLaConfigurationClick" text="Configuration" />
+      <Button layoutX="290.0" layoutY="21.0" mnemonicParsing="false" onAction="#buttonOuvrirLaConfigurationClick" text="Configuration" />
 	</children>
 </Pane>

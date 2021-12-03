@@ -9,7 +9,7 @@ public class UtilisateurDAO {
 	 * @param id (id utilidsateur)
 	 * @return ResultSet
 	 */
-	public static ResultSet unUtilisateur(String id)
+	public static ResultSet unUtilisateur(int id)
      {
 		 	 
 	     String requete = "SELECT *  FROM utilisateur where  idUtilisateur = '" + id + "'";
