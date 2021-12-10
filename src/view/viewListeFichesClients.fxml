@@ -5,17 +5,19 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="347.0" prefWidth="678.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerListeFichesClients">
+<AnchorPane prefHeight="347.0" prefWidth="908.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerListeFichesClients">
     <children>
-        <TableView fx:id="tableListeFichesClients" layoutX="18.0" layoutY="58.0" prefHeight="234.0" prefWidth="645.0">
+        <TableView fx:id="tableListeFichesClients" layoutX="18.0" layoutY="58.0" prefHeight="234.0" prefWidth="876.0">
             <columns>
-                <TableColumn fx:id="colIdLoueur" prefWidth="75.0" text="ID" />
-                <TableColumn fx:id="colIdEntreprise" prefWidth="100.0" text="IdEntreprise" />
-                <TableColumn fx:id="colNom" editable="false" prefWidth="100.0" sortable="false" text="Nom" />
-                <TableColumn fx:id="colPrenom" prefWidth="100.0" text="prenom" />
-                <TableColumn fx:id="colContact" prefWidth="60.0" text="Etat" />
-                <TableColumn fx:id="colTelContact" prefWidth="100.0" text="Tell" />
-                <TableColumn fx:id="colMailContact" prefWidth="100.0" text="Mail" />
+                <TableColumn fx:id="colNomEntreprise" prefWidth="100.0" text="Nom Entreprise" />
+                <TableColumn fx:id="colAdresseEntreprise" prefWidth="118.0" text="Adresse Entreprise" />
+                <TableColumn fx:id="colVilePays" prefWidth="100.0" text="Vile/Pays" />
+                <TableColumn fx:id="colTelEntreprise" prefWidth="100.0" text="Tel Entreprise" />
+                <TableColumn fx:id="colEmailEntreprise" prefWidth="100.0" text="Email Entreprise" />
+                <TableColumn fx:id="colNomPrenomContact" prefWidth="113.0" text="Nom/Prénom" />
+                <TableColumn fx:id="colEtatContact" prefWidth="43.0" text="Etat Contact" />
+                <TableColumn fx:id="colMailContact" prefWidth="102.0" text="Mail" />
+                <TableColumn fx:id="colTelContact" prefWidth="92.0" text="Tell" />
             </columns>
         </TableView>
         <Button id="btnOuvrirFicheClient" layoutX="359.0" layoutY="301.0" mnemonicParsing="false" onAction="#buttonOuvrirFicheClientClick" prefHeight="30.0" prefWidth="197.0" text="Ouvrir la fiche sélectionnée" textAlignment="CENTER">
@@ -28,15 +30,15 @@
                 <Font size="14.0" />
             </font>
         </Button>
-      <ImageView fitHeight="30.0" fitWidth="36.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../res/images/mblogo3.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="58.0" layoutY="15.0" text="| Liste fiches clients">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
+        <ImageView fitHeight="30.0" fitWidth="36.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../res/images/mblogo3.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="58.0" layoutY="15.0" text="| Liste fiches clients">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
     </children>
 </AnchorPane>

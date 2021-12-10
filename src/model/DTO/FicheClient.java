@@ -7,16 +7,18 @@ public class FicheClient {
     private String telEntreprise;
     private String emailEntreprise;
     private String nomPrenomContact;
+    private Boolean etatContact;
     private String mailContact;
     private String telContact;
 
-    public FicheClient(String nomEntreprise, String adresseEntreprise, String vilePays, String telEntreprise, String emailEntreprise, String nomPrenomContact, String mailContact, String telContact) {
+    public FicheClient(String nomEntreprise, String adresseEntreprise, String vilePays, String telEntreprise, String emailEntreprise, String nomPrenomContact, Boolean etatContact, String mailContact, String telContact) {
         this.nomEntreprise = nomEntreprise;
         this.adresseEntreprise = adresseEntreprise;
         this.vilePays = vilePays;
         this.telEntreprise = telEntreprise;
         this.emailEntreprise = emailEntreprise;
         this.nomPrenomContact = nomPrenomContact;
+        this.etatContact = etatContact;
         this.mailContact = mailContact;
         this.telContact = telContact;
     }
@@ -67,6 +69,14 @@ public class FicheClient {
 
     public void setNomPrenomContact(String nomPrenomContact) {
         this.nomPrenomContact = nomPrenomContact;
+    }
+
+    public Boolean getEtatContact() {
+        return etatContact;
+    }
+
+    public void setEtatContact(Boolean etatContact) {
+        this.etatContact = etatContact;
     }
 
     public String getMailContact() {

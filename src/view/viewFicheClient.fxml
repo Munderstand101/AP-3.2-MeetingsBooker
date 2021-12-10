@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerFicheClient">
+   <children>
+      <Label fx:id="labelNomEntreprise" layoutX="35.0" layoutY="56.0" text="Nom Entrepris :" />
+      <Label fx:id="labelAdresseEntreprise" layoutX="35.0" layoutY="77.0" text="Adresse Entreprise :" />
+      <Label fx:id="labelVilePays" layoutX="35.0" layoutY="98.0" text="Vile/Pays :" />
+      <Label fx:id="labelTelEntreprise" layoutX="35.0" layoutY="119.0" text="Tel Entreprise :" />
+      <Label fx:id="labelEmailEntreprise" layoutX="35.0" layoutY="137.0" text="Email Entreprise :" />
+      <Label fx:id="labelNomPrenomContact" layoutX="35.0" layoutY="157.0" text="Nom/Prénom : " />
+      <Label fx:id="labelEtatContact" layoutX="33.0" layoutY="176.0" text="Etat Contact :" />
+      <Label fx:id="labelMailContact" layoutX="34.0" layoutY="197.0" text="Mail :" />
+      <Label fx:id="labelTelContact" layoutX="35.0" layoutY="219.0" text="Tell" />
+   </children>
+</AnchorPane>

@@ -33,73 +33,70 @@ import model.DTO.Utilisateur;
 public class ControllerListeFichesClients {
 
     /**
-     * Les variables du fichier FXML associ�
+     * Les variables du fichier FXML associe
      */
-//    @FXML 	private TableView<Loueur> tableListeFichesClients;
     @FXML 	private TableView<FicheClient> tableListeFichesClients;
-//    @FXML 	private TableColumn<Loueur , Integer > colIdLoueur;
-//    @FXML 	private TableColumn<Loueur , Integer > colIdEntreprise;
-//    @FXML 	private TableColumn<Utilisateur , String > colNom;
-//    @FXML 	private TableColumn<Loueur , String > colNom;
-//    @FXML 	private TableColumn<Entreprise , String > colNom;
-//    @FXML 	private TableColumn<Loueur , String > colPrenom;
-//    @FXML 	private TableColumn<Loueur , Boolean > colContact;
-//    @FXML 	private TableColumn<Loueur , String > colTelContact;
-//    @FXML  private TableColumn<Loueur , String > colMailContact;
+    @FXML  private TableColumn<FicheClient , String > colNomEntreprise;
+    @FXML  private TableColumn<FicheClient , String > colAdresseEntreprise;
+    @FXML  private TableColumn<FicheClient , String > colVilePays;
+    @FXML  private TableColumn<FicheClient , String > colTelEntreprise;
+    @FXML  private TableColumn<FicheClient , String > colEmailEntreprise;
+    @FXML  private TableColumn<FicheClient , String > colNomPrenomContact;
+    @FXML  private TableColumn<FicheClient , Boolean > colEtatContact;
     @FXML  private TableColumn<FicheClient , String > colMailContact;
+    @FXML  private TableColumn<FicheClient , String > colTelContact;
     @FXML  private Button closeButtonListeFichesClient;
 
 
 
-    //D�claration de l'ObservableList n�cessaire au remplissage de la tableView
-//    private ObservableList<Loueur> data = FXCollections.observableArrayList();
+    //Declaration de l'ObservableList necessaire au remplissage de la tableView
     private ObservableList<FicheClient> data = FXCollections.observableArrayList();
 
 
     /**
-     * Ouverture de la fiche s�lectionn�e
-     * Click sur le bouton "Ouvrir fiche s�lectionn�e"
+     * Ouverture de la fiche selectionnee
+     * Click sur le bouton "Ouvrir fiche selectionnee"
      * @param e
      */
     @FXML	private void buttonOuvrirFicheClientClick(ActionEvent e) {
-/*
-        int index = tableListeFichesComptable.getSelectionModel().getSelectedIndex();
+
+        int index = tableListeFichesClients.getSelectionModel().getSelectedIndex();
 
 
         if(index >= 0) {
 
-            FicheFrais uneFiche = tableListeFichesComptable.getSelectionModel().getSelectedItem();
+            FicheClient uneFiche = tableListeFichesClients.getSelectionModel().getSelectedItem();
+
 
             try {
 
                 FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("../view/viewComptableFiche.fxml"));
-
-
+                loader.setLocation(getClass().getResource("../view/viewFicheClient.fxml"));
                 Parent comptableFicheLayout = (Parent) loader.load();
+                ControllerFicheClient setController= loader.getController();
 
-                ControllerComptableFiche setController= loader.getController();
-
-                //appel de la methode de transfert vers le controleur "ControllerComptableFiche"
+                //appel de la methode de transfert vers le controleur "ControllerFicheClient"
                 setController.transfertFunction(uneFiche);
 
-                Stage comptableFicheStage = new Stage();
+                Stage ficheClientStage = new Stage();
 
-                comptableFicheStage.setScene(new Scene(comptableFicheLayout));
-                comptableFicheStage.setTitle("GSB Gestion des frais - Compta Fiche de frais");
-                comptableFicheStage.initModality(Modality.APPLICATION_MODAL);
-                comptableFicheStage.show();
+                ficheClientStage.setScene(new Scene(comptableFicheLayout));
+                ficheClientStage.setTitle("MeetingsBooker - Fiche client");
+                ficheClientStage.initModality(Modality.APPLICATION_MODAL);
+                ficheClientStage.show();
+
+
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
 
         }else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText("S�lectionnez une fiche de frais");
-            alert.getDialogPane().setContentText("Vous devez s�lectionner une fiche de frais afin de la visualiser");
+            alert.setHeaderText("Selectionnez une fiche client");
+            alert.getDialogPane().setContentText("Vous devez selectionner une fiche client afin de la visualiser");
             alert.showAndWait();
         }
-*/
+
 
     }
 
@@ -125,8 +122,9 @@ public class ControllerListeFichesClients {
                             rsListeFichesClients.getString(4),
                             rsListeFichesClients.getString(5),
                             rsListeFichesClients.getString(6),
-                            rsListeFichesClients.getString(7),
-                            rsListeFichesClients.getString(8));
+                            rsListeFichesClients.getBoolean(7),
+                            rsListeFichesClients.getString(8),
+                            rsListeFichesClients.getString(9));
 
                  /*   ResultSet rsUnUtilisateur = UtilisateurDAO.unUtilisateur(rsListeFichesClients.getInt(1));
                     Utilisateur utilisateur = new Utilisateur(
@@ -200,7 +198,15 @@ public class ControllerListeFichesClients {
 //        colContact.setCellValueFactory(new PropertyValueFactory<Loueur,Boolean>("contact"));
 //        colTelContact.setCellValueFactory(new PropertyValueFactory<Loueur,String>("telContact"));
 //        colMailContact.setCellValueFactory(new PropertyValueFactory<Loueur,String>("mailContact"));
+        colNomEntreprise.setCellValueFactory(new PropertyValueFactory<FicheClient,String>("nomEntreprise"));
+        colAdresseEntreprise.setCellValueFactory(new PropertyValueFactory<FicheClient,String>("adresseEntreprise"));
+        colVilePays.setCellValueFactory(new PropertyValueFactory<FicheClient,String>("vilePays"));
+        colTelEntreprise.setCellValueFactory(new PropertyValueFactory<FicheClient,String>("telEntreprise"));
+        colEmailEntreprise.setCellValueFactory(new PropertyValueFactory<FicheClient,String>("emailEntreprise"));
+        colNomPrenomContact.setCellValueFactory(new PropertyValueFactory<FicheClient,String>("nomPrenomContact"));
+        colEtatContact.setCellValueFactory(new PropertyValueFactory<FicheClient,Boolean>("etatContact"));
         colMailContact.setCellValueFactory(new PropertyValueFactory<FicheClient,String>("mailContact"));
+        colTelContact.setCellValueFactory(new PropertyValueFactory<FicheClient,String>("telContact"));
 
         tableListeFichesClients.setItems(data);
 
