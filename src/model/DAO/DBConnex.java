@@ -8,14 +8,14 @@ import java.sql.Statement;
 
 public class DBConnex {
 	/**
-	 * Méthode de connexion à la base de données
+	 * Mï¿½thode de connexion ï¿½ la base de donnï¿½es
 	 * @return  Statement
 	 */
 	public static Statement connexion() {
 		
 		Statement statement = null;
 		 try {
-				Connection	connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/gsb?user=root&password=");
+				Connection	connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/meetingsbooker?user=root&password=");
 			
 				statement = connection.createStatement();
 				
@@ -31,7 +31,7 @@ public class DBConnex {
 	}
 	
 	/**
-	 * Méthode d'authentification des l'utilisteur
+	 * Mï¿½thode d'authentification des l'utilisteur
 	 * @param login
 	 * @param mdp
 	 * @param unStatement
@@ -41,7 +41,7 @@ public class DBConnex {
 		
 		ResultSet rs = null ;
 		try {
-			String sql ="SELECT id , nom , prenom, login, statut  FROM utilisateur where login = '" + login + "' and mdp = '"+ mdp +"'";
+			String sql ="SELECT idUtilisateur , nom , prenom, login, statut  FROM utilisateur where login = '" + login + "' and mdp = '"+ mdp +"'";
 			rs = unStatement.executeQuery(sql);
 			if (!rs.next()) {
 				rs =null;
@@ -56,7 +56,7 @@ public class DBConnex {
 	
 	
 	/**
-	 * Méthode permettant l'envoi de requêtes "select" à la base de données
+	 * Mï¿½thode permettant l'envoi de requï¿½tes "select" ï¿½ la base de donnï¿½es
 	 * @param requete
 	 * @param unStatement
 	 * @return ResultSet
@@ -79,7 +79,7 @@ public class DBConnex {
 	}
 	
 	/**
-	  * Méthode permettant l'envoi de requêtes "update, insert, delete" à la base de données
+	  * Mï¿½thode permettant l'envoi de requï¿½tes "update, insert, delete" ï¿½ la base de donnï¿½es
 	 * @param requete
 	 * @param unStatement
 	 * @return Integer

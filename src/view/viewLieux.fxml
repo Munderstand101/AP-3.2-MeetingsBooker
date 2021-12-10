@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="viewLieux" prefHeight="505.0" prefWidth="865.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerLieux">
+   <children>
+      <Button fx:id="btnAjtLieu" layoutX="109.0" layoutY="437.0" mnemonicParsing="false" text="Ajouter un lieu" />
+      <ComboBox fx:id="cmbAjtSalle" layoutX="641.0" layoutY="188.0" prefWidth="150.0" />
+      <Button fx:id="btnAjtSalle" layoutX="685.0" layoutY="274.0" mnemonicParsing="false" text="Gérer" />
+      <Label layoutX="641.0" layoutY="136.0" prefHeight="25.0" prefWidth="181.0" text="Modifier un lieu et gérer ses salles" />
+      <TableView fx:id="tableLieux" layoutX="47.0" layoutY="33.0" prefHeight="360.0" prefWidth="571.0">
+        <columns>
+          <TableColumn fx:id="colIdVille" prefWidth="85.0" text="idVille" />
+          <TableColumn fx:id="colIdEntreprise" prefWidth="101.0" text="idEntreprise" />
+            <TableColumn fx:id="colLibelleLieu" prefWidth="106.0" text="LibelleLieu" />
+            <TableColumn fx:id="colAdresseLieu" prefWidth="84.0" text="AdresseLieu" />
+            <TableColumn fx:id="colDescriptifLieu" prefWidth="118.0" text="Descriptif" />
+            <TableColumn fx:id="colIdLieu" prefWidth="75.0" text="idLieu" />
+        </columns>
+      </TableView>
+      <Button layoutX="272.0" layoutY="437.0" mnemonicParsing="false" text="Supprimer un lieu" />
+   </children>
+</AnchorPane>
