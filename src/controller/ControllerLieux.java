@@ -38,18 +38,18 @@ public class ControllerLieux {
 
     @FXML private Button btnGestionSalle;
 
-    @FXML private TableView<Salle> tableSalles;
-    @FXML private TableColumn<Salle, Integer> colIdLieuS;
-    @FXML private TableColumn<Salle, String> colNomSalle;
-    @FXML private TableColumn<Salle, Integer> colLargeur;
-    @FXML private TableColumn<Salle, Integer> colLongueur;
-    @FXML private TableColumn<Salle, Integer> colSurface;
-    @FXML private TableColumn<Salle, Integer> colHauteur;
-    @FXML private TableColumn<Salle, Integer> colCapacite;
-    @FXML private TableColumn<Salle, Double> colTarif;
-    @FXML private TableColumn<Salle, Integer> colIdSalle;
-
-    private Lieu lieuActif;
+//    @FXML private TableView<Salle> tableSalles;
+//    @FXML private TableColumn<Salle, Integer> colIdLieuS;
+//    @FXML private TableColumn<Salle, String> colNomSalle;
+//    @FXML private TableColumn<Salle, Integer> colLargeur;
+//    @FXML private TableColumn<Salle, Integer> colLongueur;
+//    @FXML private TableColumn<Salle, Integer> colSurface;
+//    @FXML private TableColumn<Salle, Integer> colHauteur;
+//    @FXML private TableColumn<Salle, Integer> colCapacite;
+//    @FXML private TableColumn<Salle, Double> colTarif;
+//    @FXML private TableColumn<Salle, Integer> colIdSalle;
+//
+//    private Lieu lieuActif;
 
     private ObservableList<Lieu> data = FXCollections.observableArrayList();
 
@@ -81,7 +81,7 @@ public class ControllerLieux {
         tableLieux.setItems(data);
     }
 
-    @FXML private void btnOuvrirGestionSalle(ActionEvent e){
+   @FXML private void btnOuvrirGestionSalle(ActionEvent e){
         int index = tableLieux.getSelectionModel().getSelectedIndex();
 
 
@@ -118,7 +118,7 @@ public class ControllerLieux {
             alert.getDialogPane().setContentText("Vous devez sélectionner un lieu afin gérer ses salles");
             alert.showAndWait();
         }
-    }
+   }
 
     private void remplissagetableViewSalles(){
 
