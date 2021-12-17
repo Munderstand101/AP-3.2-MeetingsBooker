@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.sql.ResultSet;
 
 import java.util.ArrayList;
+
+import application.Main;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -17,6 +19,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.Pane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.DAO.EntrepriseDAO;
@@ -49,6 +52,8 @@ public class ControllerListeFichesClients {
 
 
 
+
+    private FicheClient ficheActive ;
     //Declaration de l'ObservableList necessaire au remplissage de la tableView
     private ObservableList<FicheClient> data = FXCollections.observableArrayList();
 
@@ -98,6 +103,82 @@ public class ControllerListeFichesClients {
         }
 
 
+    }
+
+
+    /**
+     * AjouterF une fiche
+     * Click sur le bouton "AjouterF une fiche"
+     * @param e
+     */
+    @FXML	private void buttonAjouterFicheClientClick(ActionEvent e) {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            Stage ajouterFicheClientStage = new Stage();
+
+            loader.setLocation(Main.class.getResource("../view/viewAjouterFicheClient.fxml"));
+            Pane ajouterFicheClientLayout = (Pane) loader.load();
+            Scene ajouterFicheClientScene = new Scene(ajouterFicheClientLayout);
+            ajouterFicheClientStage.setScene(ajouterFicheClientScene);
+
+            ajouterFicheClientStage.setTitle("MeetingsBooker - Ajouter une Fiche client");
+            ajouterFicheClientStage.initModality(Modality.APPLICATION_MODAL);
+            ajouterFicheClientStage.show();
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+    }
+
+    /**
+     * modifier la fiche selectionnee
+     * Click sur le bouton "modifier fiche selectionnee"
+     * @param e
+     */
+    @FXML	private void buttonModifierFicheClientClick(ActionEvent e) {
+
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            Stage modifierFicheClientStage = new Stage();
+
+            loader.setLocation(Main.class.getResource("../view/viewModifierFicheClient.fxml"));
+            Pane modifierFicheClientLayout = (Pane) loader.load();
+            Scene modifierFicheClientScene = new Scene(modifierFicheClientLayout);
+            modifierFicheClientStage.setScene(modifierFicheClientScene);
+
+            modifierFicheClientStage.setTitle("MeetingsBooker - Modifier une Fiche client");
+            modifierFicheClientStage.initModality(Modality.APPLICATION_MODAL);
+            modifierFicheClientStage.show();
+        } catch (IOException e1) {
+            e1.printStackTrace();
+        }
+
+    }
+
+    /**
+     * Vlaider la fiche selectionnee
+     * Click sur le bouton "Vlaider le contact de la fiche selectionnee"
+     * @param e
+     */
+    @FXML	private void buttonValiderFicheClientClick(ActionEvent e) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setHeaderText("Modification impossible");
+        alert.getDialogPane().setContentText("Validation de la fiche non effectuee.");
+        alert.showAndWait();
+
+       /* if( ficheActive.getEtatContact().compareTo("0")==0) {
+
+            Integer reponse = FicheClientDAO.changerEtat(ficheActive.getIdLoueur() , "1");
+            if(reponse == 1) {
+                ficheActive.changerEtatFiche("VA");
+                etatLabel.setText("Etat : "+ ficheActive.getEtatLong());
+            }
+            else {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText("Modification impossible");
+                alert.getDialogPane().setContentText("Validation de la fiche non effectuee.");
+                alert.showAndWait();
+            }
+        }*/
     }
 
 

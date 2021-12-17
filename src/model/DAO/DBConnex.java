@@ -15,7 +15,7 @@ public class DBConnex {
 		
 		Statement statement = null;
 		 try {
-				Connection	connection = DriverManager.getConnection("jdbc:mariadb://localhost:3307/MeetingsBooker2?user=root&password=");
+				Connection	connection = DriverManager.getConnection("jdbc:mariadb://localhost:3307/MeetingsBooker5?user=root&password=");
 			
 				statement = connection.createStatement();
 				

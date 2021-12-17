@@ -15,17 +15,17 @@
                 <TableColumn fx:id="colTelEntreprise" prefWidth="100.0" text="Tel Entreprise" />
                 <TableColumn fx:id="colEmailEntreprise" prefWidth="100.0" text="Email Entreprise" />
                 <TableColumn fx:id="colNomPrenomContact" prefWidth="113.0" text="Nom/Prénom" />
-                <TableColumn fx:id="colEtatContact" prefWidth="43.0" text="Etat Contact" />
-                <TableColumn fx:id="colMailContact" prefWidth="102.0" text="Mail" />
+                <TableColumn fx:id="colEtatContact" prefWidth="69.0" text="Contacter?" />
+                <TableColumn fx:id="colMailContact" prefWidth="76.0" text="Mail" />
                 <TableColumn fx:id="colTelContact" prefWidth="92.0" text="Tell" />
             </columns>
         </TableView>
-        <Button id="btnOuvrirFicheClient" layoutX="359.0" layoutY="301.0" mnemonicParsing="false" onAction="#buttonOuvrirFicheClientClick" prefHeight="30.0" prefWidth="197.0" text="Ouvrir la fiche sélectionnée" textAlignment="CENTER">
+        <Button id="btnOuvrirFicheClient" layoutX="284.0" layoutY="302.0" mnemonicParsing="false" onAction="#buttonOuvrirFicheClientClick" prefHeight="30.0" prefWidth="197.0" text="Ouvrir la fiche sélectionnée" textAlignment="CENTER">
             <font>
                 <Font size="14.0" />
             </font>
         </Button>
-        <Button id="closeButtonListeFichesClient" fx:id="closeButtonListeFichesClient" layoutX="565.0" layoutY="301.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonCloseListeFichesClientClick" prefHeight="28.0" prefWidth="98.0" text="Quitter" textAlignment="CENTER">
+        <Button id="closeButtonListeFichesClient" fx:id="closeButtonListeFichesClient" layoutX="796.0" layoutY="299.0" maxWidth="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#buttonCloseListeFichesClientClick" prefHeight="28.0" prefWidth="98.0" text="Quitter" textAlignment="CENTER">
             <font>
                 <Font size="14.0" />
             </font>
@@ -40,5 +40,8 @@
                 <Font size="18.0" />
             </font>
         </Label>
+      <Button id="btnAjouterFicheClient" onAction="#buttonAjouterFicheClientClick" layoutX="667.0" layoutY="299.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="55.0" text="Ajouter" />
+      <Button id="btnModifierFicheClient" onAction="#buttonModifierFicheClientClick" layoutX="729.0" layoutY="299.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="61.0" text="Modifier" />
+      <Button id="btnValiderFicheClient" onAction="#buttonValiderFicheClientClick" layoutX="552.0" layoutY="300.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="108.0" text="Valider Contacter" />
     </children>
 </AnchorPane>
