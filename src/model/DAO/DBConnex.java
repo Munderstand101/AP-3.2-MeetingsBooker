@@ -1,10 +1,6 @@
 package model.DAO;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 
 public class DBConnex {
 	/**
@@ -29,7 +25,7 @@ public class DBConnex {
 				return statement;
 			}
 	}
-	
+
 	/**
 	 * M�thode d'authentification des l'utilisteur
 	 * @param login
@@ -97,6 +93,25 @@ public class DBConnex {
 				
 			}
 		 return reponse;
+	}
+
+	public static PreparedStatement connexxion(String requete) {
+
+		PreparedStatement statement = null;
+		try {
+			Connection	connection = DriverManager.getConnection("jdbc:mariadb://localhost:3306/meetingsbooker?user=root&password=");
+
+			statement = connection.prepareStatement(requete);
+
+
+			return statement;
+
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+			System.out.println(e.getMessage());
+			return statement;
+		}
 	}
 	
 

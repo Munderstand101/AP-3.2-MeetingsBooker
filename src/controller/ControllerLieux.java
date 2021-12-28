@@ -53,10 +53,10 @@ public class ControllerLieux {
 
     private ObservableList<Lieu> data = FXCollections.observableArrayList();
 
-    private void remplissagetableViewLieux() {
+    private void remplissagetableViewLieu() {
         try {
 
-            ResultSet rsLieux = LieuDAO.lesLieux();
+            ResultSet rsLieux = LieuDAO.lesLieu();
 
             rsLieux.beforeFirst();
             while (rsLieux.next()) {
@@ -65,6 +65,33 @@ public class ControllerLieux {
                         ,rsLieux.getString(5),rsLieux.getString(6));
 
                 data.add(thelieu);
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        colIdVille.setCellValueFactory(new PropertyValueFactory<Lieu,Integer>("idVille"));
+        colIdEntreprise.setCellValueFactory(new PropertyValueFactory<Lieu,Integer>("idEntreprise"));
+        colLibelleLieu.setCellValueFactory(new PropertyValueFactory<Lieu,String>("libelleLieu"));
+        colAdresseLieu.setCellValueFactory(new PropertyValueFactory<Lieu,String>("adresseLieu"));
+        colDescriptifLieu.setCellValueFactory(new PropertyValueFactory<Lieu,String>("descriptif"));
+        colIdLieu.setCellValueFactory(new PropertyValueFactory<Lieu, Integer>("idLieu"));
+
+        tableLieux.setItems(data);
+    }
+
+    private void remplissagetableViewLieux() {
+        try {
+            ArrayList<Lieu> lesLieux = new ArrayList<>();
+            lesLieux = LieuDAO.lesLieux();
+
+            for (Lieu derLieu : lesLieux) {
+
+                Lieu thelieu = new Lieu(derLieu.getIdVille(), derLieu.getIdLieu(), derLieu.getLibelleLieu(), derLieu.getAdresseLieu()
+                    , derLieu.getDescriptif(), derLieu.getIdEntreprise());
+
+            data.add(thelieu);
             }
         }
         catch (Exception e) {
@@ -124,8 +151,24 @@ public class ControllerLieux {
 
     }
 
-    @FXML	private void buttonOuvrirFicheComptableClick(ActionEvent e) {
+    @FXML	private void buttonOuvrirFicheComptableClick(ActionEvent e) throws IOException {
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("../view/viewAjouterLieu.fxml"));
 
+            Parent ajouterLieuLayout = (Parent) loader.load();
+
+            ControllerAjouterLieu setController = loader.getController();
+
+            Stage ajouterLieuStage = new Stage();
+
+            ajouterLieuStage.setScene(new Scene(ajouterLieuLayout));
+            ajouterLieuStage.setTitle("Gestion des salles");
+            ajouterLieuStage.initModality(Modality.APPLICATION_MODAL);
+            ajouterLieuStage.show();
+        }catch (IOException e1) {
+            e1.printStackTrace();
+        }
 
     }
 

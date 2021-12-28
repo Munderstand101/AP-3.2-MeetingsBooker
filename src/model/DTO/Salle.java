@@ -9,10 +9,10 @@ public class Salle {
     private int surface;
     private int hauteur;
     private int capacite;
-    private float tarifDemiJournee;
+    private Double tarifDemiJournee;
     private String idLieu;
 
-    public Salle(String pidSalle, String pnomSalle,String pidLieu, int plargeur, int plongueur, int psurface, int phauteur, int pcapacite, float ptarifDemiJournee){
+    public Salle(String pidSalle, String pnomSalle,String pidLieu, int plargeur, int plongueur, int psurface, int phauteur, int pcapacite, Double ptarifDemiJournee){
         this.idSalle=pidSalle;
         this.nomSalle=pnomSalle;
         this.idLieu=pidLieu;
@@ -80,11 +80,11 @@ public class Salle {
         this.capacite = capacite;
     }
 
-    public float getTarifDemiJournee() {
+    public Double getTarifDemiJournee() {
         return tarifDemiJournee;
     }
 
-    public void setTarifDemiJournee(float tarifDemiJournee) {
+    public void setTarifDemiJournee(Double tarifDemiJournee) {
         this.tarifDemiJournee = tarifDemiJournee;
     }
 

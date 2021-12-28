@@ -14,6 +14,7 @@ import model.DTO.Salle;
 
 import java.sql.ResultSet;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 public class ControllerGestionSalle {
 
@@ -34,19 +35,54 @@ public class ControllerGestionSalle {
 
     private ObservableList<Salle> data = FXCollections.observableArrayList();
 
-    private void remplissagetableViewSalles(Lieu unLieu) {
+    private void remplissagetableViewSalle(Lieu unLieu) {
         try {
 
-            ResultSet rsSalles = SalleDAO.lesSalles(unLieu.getIdLieu());
+            ResultSet rsSalles = SalleDAO.lesSalle(unLieu.getIdLieu());
 
             rsSalles.beforeFirst();
             while (rsSalles.next()) {
 
                 Salle theSalle = new Salle(rsSalles.getString(1),rsSalles.getString(2),rsSalles.getString(9), rsSalles.getInt(3), rsSalles.getInt(4)
-                        ,rsSalles.getInt(5),rsSalles.getInt(6),rsSalles.getInt(7), rsSalles.getFloat(8));
+                        ,rsSalles.getInt(5),rsSalles.getInt(6),rsSalles.getInt(7), rsSalles.getDouble("tarifDemiJournee"));
 
                 data.add(theSalle);
             }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        colIdLieuS.setCellValueFactory(new PropertyValueFactory<Salle, String>("idLieu"));
+        colNomSalle.setCellValueFactory(new PropertyValueFactory<Salle, String>("nomSalle"));
+        colLargeur.setCellValueFactory(new PropertyValueFactory<Salle, Integer>("largeur"));
+        colLongueur.setCellValueFactory(new PropertyValueFactory<Salle, Integer>("longueur"));
+        colSurface.setCellValueFactory(new PropertyValueFactory<Salle, Integer>("surface"));
+        colHauteur.setCellValueFactory(new PropertyValueFactory<Salle, Integer>("hauteur"));
+        colCapacite.setCellValueFactory(new PropertyValueFactory<Salle, Integer>("capacite"));
+
+        colTarif.setCellValueFactory(new PropertyValueFactory<Salle, Double>("tarifDemiJournee"));
+        colIdSalle.setCellValueFactory(new PropertyValueFactory<Salle, String>("idSalle"));
+
+        tableSalles.setItems(data);
+    }
+
+    private void remplissagetableViewSalles(Lieu unLieu) {
+        try {
+
+            ArrayList<Salle> lesSalles = new ArrayList<>();
+
+            lesSalles = SalleDAO.lesSalles(unLieu.getIdLieu());
+
+            for (Salle derSalle : lesSalles) {
+                Salle theSalle = new Salle(derSalle.getIdSalle(),derSalle.getNomSalle(),derSalle.getIdLieu(), derSalle.getLargeur(), derSalle.getLongueur()
+                        ,derSalle.getSurface(),derSalle.getHauteur(), derSalle.getCapacite(), derSalle.getTarifDemiJournee());
+
+                data.add(theSalle);
+            }
+
+
+
         }
         catch (Exception e) {
             e.printStackTrace();

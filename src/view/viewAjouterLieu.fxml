@@ -4,13 +4,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="515.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerAjouterLieu">
+<AnchorPane fx:id="ajouterLieu" prefHeight="515.0" prefWidth="615.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerAjouterLieu">
    <children>
       <Label layoutX="42.0" layoutY="85.0" prefHeight="17.0" prefWidth="80.0" text="Libelle du Lieu" />
       <TextField fx:id="libLieuTxt" layoutX="42.0" layoutY="105.0" />
       <TextField fx:id="coordxTxt" layoutX="24.0" layoutY="385.0" prefHeight="25.0" prefWidth="64.0" />
       <TextField fx:id="coordyTxt" layoutX="166.0" layoutY="373.0" prefHeight="25.0" prefWidth="73.0" />
-      <Label layoutX="42.0" layoutY="163.0" text="Adresse du Lieu" />
+      <Label layoutX="40.0" layoutY="163.0" text="Adresse du Lieu" />
       <ComboBox fx:id="cmbIdEntreprise" layoutX="311.0" layoutY="124.0" prefWidth="150.0" />
       <ComboBox fx:id="cmbIdVille" layoutX="313.0" layoutY="186.0" prefWidth="150.0" />
       <Label layoutX="313.0" layoutY="97.0" prefHeight="17.0" prefWidth="105.0" text="Id de l'Entreprise" />
@@ -20,7 +20,7 @@
             <Font size="36.0" />
          </font>
       </Label>
-      <TextArea fx:id="adrLieuTxt" layoutX="42.0" layoutY="186.0" prefHeight="143.0" prefWidth="149.0" />
+      <TextArea fx:id="adrLieuTxt" layoutX="42.0" layoutY="186.0" prefHeight="0.0" prefWidth="149.0" />
       <Label layoutX="24.0" layoutY="352.0" text="Coordonnées en X" />
       <Label layoutX="166.0" layoutY="348.0" prefHeight="25.0" prefWidth="98.0" text="Coordonnées en Y" />
       <ComboBox fx:id="cmbAnnul" layoutX="313.0" layoutY="267.0" prefWidth="150.0" />
@@ -32,5 +32,7 @@
             <Font size="36.0" />
          </font>
       </Button>
+      <Label layoutX="42.0" layoutY="241.0" text="Descriptif" />
+      <TextField fx:id="descriptifTxt" layoutX="42.0" layoutY="267.0" />
    </children>
 </AnchorPane>
