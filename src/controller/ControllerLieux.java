@@ -33,23 +33,19 @@ public class ControllerLieux {
     @FXML private TableColumn<Lieu, String> colLibelleLieu;
     @FXML private TableColumn<Lieu, String> colAdresseLieu;
     @FXML private TableColumn<Lieu, String> colDescriptifLieu;
+    @FXML private TableColumn<Lieu, Double> colCoordx;
+    @FXML private TableColumn<Lieu, Double> colCoordy;
+    @FXML private TableColumn<Lieu, Integer> colAnnul;
+    @FXML private TableColumn<Lieu, Integer> colNbEtoiles;
+
 
     @FXML private Button btnAjtLieu;
 
+    @FXML private Button btnRafraichir;
+
     @FXML private Button btnGestionSalle;
 
-//    @FXML private TableView<Salle> tableSalles;
-//    @FXML private TableColumn<Salle, Integer> colIdLieuS;
-//    @FXML private TableColumn<Salle, String> colNomSalle;
-//    @FXML private TableColumn<Salle, Integer> colLargeur;
-//    @FXML private TableColumn<Salle, Integer> colLongueur;
-//    @FXML private TableColumn<Salle, Integer> colSurface;
-//    @FXML private TableColumn<Salle, Integer> colHauteur;
-//    @FXML private TableColumn<Salle, Integer> colCapacite;
-//    @FXML private TableColumn<Salle, Double> colTarif;
-//    @FXML private TableColumn<Salle, Integer> colIdSalle;
-//
-//    private Lieu lieuActif;
+
 
     private ObservableList<Lieu> data = FXCollections.observableArrayList();
 
@@ -89,7 +85,8 @@ public class ControllerLieux {
             for (Lieu derLieu : lesLieux) {
 
                 Lieu thelieu = new Lieu(derLieu.getIdVille(), derLieu.getIdLieu(), derLieu.getLibelleLieu(), derLieu.getAdresseLieu()
-                    , derLieu.getDescriptif(), derLieu.getIdEntreprise());
+                    , derLieu.getDescriptif(), derLieu.getIdEntreprise(), derLieu.getAnnulationGratuite(),
+                        derLieu.getNbEtoiles(), derLieu.getCoordx(), derLieu.getCoordy());
 
             data.add(thelieu);
             }
@@ -104,6 +101,11 @@ public class ControllerLieux {
         colAdresseLieu.setCellValueFactory(new PropertyValueFactory<Lieu,String>("adresseLieu"));
         colDescriptifLieu.setCellValueFactory(new PropertyValueFactory<Lieu,String>("descriptif"));
         colIdLieu.setCellValueFactory(new PropertyValueFactory<Lieu, Integer>("idLieu"));
+
+        colAnnul.setCellValueFactory(new PropertyValueFactory<Lieu, Integer>("annulationGratuite"));
+        colNbEtoiles.setCellValueFactory(new PropertyValueFactory<Lieu, Integer>("nbEtoiles"));
+        colCoordx.setCellValueFactory(new PropertyValueFactory<Lieu, Double>("coordX"));
+        colCoordy.setCellValueFactory(new PropertyValueFactory<Lieu, Double>("coordY"));
 
         tableLieux.setItems(data);
     }
@@ -147,11 +149,9 @@ public class ControllerLieux {
         }
    }
 
-    private void remplissagetableViewSalles(){
 
-    }
 
-    @FXML	private void buttonOuvrirFicheComptableClick(ActionEvent e) throws IOException {
+    @FXML	private void buttonAjouterLieuClick(ActionEvent e) throws IOException {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(getClass().getResource("../view/viewAjouterLieu.fxml"));
@@ -172,9 +172,16 @@ public class ControllerLieux {
 
     }
 
-    public void buttonAjouterLieuClick(ActionEvent e) {
-
+    private void viderTableView(){
+        tableLieux.getItems().clear();
     }
+
+    @FXML private void rafraichirClick(ActionEvent e){
+        viderTableView();
+        remplissagetableViewLieux();
+    }
+
+
 
     public void initialize() {
 

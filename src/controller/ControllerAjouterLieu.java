@@ -1,12 +1,13 @@
 package controller;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
+import javafx.stage.Stage;
 import model.DAO.EntrepriseDAO;
 import model.DAO.LieuDAO;
 import model.DTO.Entreprise;
@@ -27,6 +28,15 @@ public class ControllerAjouterLieu {
     @FXML private ComboBox cmbAnnul;
     @FXML private ComboBox cmbNbEtoile;
     @FXML private Button btnAjouter;
+    @FXML private Label coordx;
+    @FXML private Label coordy;
+    @FXML private Slider slidCoordx;
+    @FXML private Slider slidCoordy;
+
+
+
+
+
 
     public void initialize() throws SQLException {
         cmbNbEtoile.getItems().addAll(1,2,3,4,5);
@@ -50,7 +60,43 @@ public class ControllerAjouterLieu {
         cmbIdVille.setItems(lesidVilles);
 
 
+        slidCoordx.valueProperty().addListener(new ChangeListener<Number>() {
+
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, //
+                                Number oldValue, Number newValue) {
+
+                coordx.setText(String.valueOf(newValue));
+            }
+        });
+
+        slidCoordy.valueProperty().addListener(new ChangeListener<Number>() {
+
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, //
+                                Number oldValue, Number newValue) {
+
+                coordy.setText(String.valueOf(newValue));
+            }
+        });
+
+
     }
+
+    @FXML	private void ajouterLieuClick(ActionEvent e){
+        int idVille = (int) cmbIdVille.getValue();
+        int idEntreprise = (int) cmbIdEntreprise.getValue();
+        int Annul = (int) cmbAnnul.getValue();
+        int nbEtoiles = (int) cmbNbEtoile.getValue();
+        LieuDAO.ajouterLieu(idVille,idEntreprise,libLieuTxt.getText(),
+                adrLieuTxt.getText(),slidCoordx.getValue(),slidCoordy.getValue(),Annul,
+                nbEtoiles,descriptifTxt.getText());
+
+        Stage stage = (Stage) btnAjouter.getScene().getWindow();
+        stage.close();
+    }
+
+
 
 
 

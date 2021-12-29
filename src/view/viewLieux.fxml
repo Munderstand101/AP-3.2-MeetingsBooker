@@ -5,35 +5,26 @@
 
 <AnchorPane fx:id="viewLieux" prefHeight="676.0" prefWidth="1032.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerLieux">
    <children>
-      <Button fx:id="btnAjtLieu" layoutX="855.0" layoutY="124.0" mnemonicParsing="false" onAction="#buttonOuvrirFicheComptableClick" text="Ajouter un lieu" />
-      <ComboBox fx:id="cmbAjtSalle" layoutX="641.0" layoutY="188.0" prefWidth="150.0" />
-      <Button fx:id="btnGestionSalle" layoutX="696.0" layoutY="338.0" mnemonicParsing="false" onAction="#btnOuvrirGestionSalle" text="Ajouter des salles" />
-      <Label layoutX="641.0" layoutY="136.0" prefHeight="25.0" prefWidth="181.0" text="Modifier un lieu et gérer ses salles" />
-      <TableView fx:id="tableLieux" layoutX="35.0" layoutY="54.0" prefHeight="360.0" prefWidth="571.0">
+      <Button fx:id="btnAjtLieu" layoutX="776.0" layoutY="541.0" mnemonicParsing="false" onAction="#buttonAjouterLieuClick" text="Ajouter un lieu" />
+      <ComboBox fx:id="cmbAjtSalle" layoutX="430.0" layoutY="457.0" prefWidth="150.0" />
+      <Button fx:id="btnGestionSalle" layoutX="297.0" layoutY="515.0" mnemonicParsing="false" onAction="#btnOuvrirGestionSalle" text="Ajouter des salles" />
+      <Label layoutX="406.0" layoutY="432.0" prefHeight="25.0" prefWidth="181.0" text="Modifier un lieu et gérer ses salles" />
+      <TableView fx:id="tableLieux" layoutX="44.0" layoutY="57.0" prefHeight="360.0" prefWidth="850.0">
         <columns>
-          <TableColumn fx:id="colIdVille" prefWidth="85.0" text="idVille" />
-          <TableColumn fx:id="colIdEntreprise" prefWidth="101.0" text="idEntreprise" />
-            <TableColumn fx:id="colLibelleLieu" prefWidth="106.0" text="LibelleLieu" />
-            <TableColumn fx:id="colAdresseLieu" prefWidth="84.0" text="AdresseLieu" />
-            <TableColumn fx:id="colDescriptifLieu" prefWidth="118.0" text="Descriptif" />
-            <TableColumn fx:id="colIdLieu" prefWidth="75.0" text="idLieu" />
+          <TableColumn fx:id="colIdVille" prefWidth="60.0" text="idVille" />
+          <TableColumn fx:id="colIdEntreprise" prefWidth="82.0" text="idEntreprise" />
+            <TableColumn fx:id="colLibelleLieu" prefWidth="103.0" text="LibelleLieu" />
+            <TableColumn fx:id="colAdresseLieu" prefWidth="109.0" text="AdresseLieu" />
+            <TableColumn fx:id="colDescriptifLieu" prefWidth="96.0" text="Descriptif" />
+            <TableColumn fx:id="colIdLieu" prefWidth="47.0" text="idLieu" />
+            <TableColumn fx:id="colCoordx" prefWidth="66.0" text="coordX" />
+            <TableColumn fx:id="colCoordy" prefWidth="76.0" text="coordY" />
+            <TableColumn fx:id="colAnnul" prefWidth="134.0" text="annulationGratuite" />
+            <TableColumn fx:id="colNbEtoiles" prefWidth="75.0" text="nbEtoiles" />
         </columns>
       </TableView>
-      <Button layoutX="855.0" layoutY="194.0" mnemonicParsing="false" text="Supprimer un lieu" />
-      <TableView fx:id="tableSalles" layoutX="35.0" layoutY="462.0" prefHeight="200.0" prefWidth="715.0">
-        <columns>
-          <TableColumn fx:id="colIdLieuS" prefWidth="75.0" text="idLieu" />
-          <TableColumn fx:id="colNomSalle" prefWidth="75.0" text="nomSalle" />
-            <TableColumn fx:id="colLargeur" prefWidth="75.0" text="Largeur" />
-            <TableColumn fx:id="colLongueur" prefWidth="75.0" text="Longueur" />
-            <TableColumn fx:id="colSurface" prefWidth="75.0" text="Surface" />
-            <TableColumn fx:id="colHauteur" prefWidth="75.0" text="Hauteur" />
-            <TableColumn fx:id="colCapacite" prefWidth="75.0" text="Capacité" />
-            <TableColumn fx:id="colTarif" prefWidth="113.0" text="TarifDemiJournée" />
-            <TableColumn fx:id="colIdSalle" prefWidth="75.0" text="idSalle" />
-        </columns>
-      </TableView>
+      <Button layoutX="629.0" layoutY="528.0" mnemonicParsing="false" text="Supprimer un lieu" />
       <Label layoutX="35.0" layoutY="22.0" text="Les Lieux" />
-      <Label layoutX="35.0" layoutY="427.0" text="Les Salles" />
+      <Button fx:id="btnRafraichir" layoutX="204.0" layoutY="502.0" mnemonicParsing="false" onAction="#rafraichirClick" text="Rafraîchir" />
    </children>
 </AnchorPane>
