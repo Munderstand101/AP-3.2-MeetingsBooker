@@ -13,8 +13,8 @@ public class Lieu {
     private String nbEtoiles;
     private String descriptif;
 
-    private Double coordx;
-    private Double coordy;
+    private Double coordX;
+    private Double coordY;
 
     public Lieu(String pidVille, String pidLieu, String plibelleLieu, String padresseLieu, String pdescriptif, String pidEntreprise){
         this.idVille=pidVille;
@@ -35,8 +35,8 @@ public class Lieu {
         this.idEntreprise=pidEntreprise;
         this.annulationGratuite=pannulation;
         this.nbEtoiles=pnbEtoiles;
-        this.coordx=pcoordx;
-        this.coordy=pcoordy;
+        this.coordX=pcoordx;
+        this.coordY=pcoordy;
     }
 
     public String getIdVille() {
@@ -104,18 +104,18 @@ public class Lieu {
     }
 
     public Double getCoordx() {
-        return coordx;
+        return coordX;
     }
 
     public void setCoordx(Double coordx) {
-        this.coordx = coordx;
+        this.coordX = coordx;
     }
 
     public Double getCoordy() {
-        return coordy;
+        return coordY;
     }
 
     public void setCoordy(Double coordy) {
-        this.coordy = coordy;
+        this.coordY = coordy;
     }
 }

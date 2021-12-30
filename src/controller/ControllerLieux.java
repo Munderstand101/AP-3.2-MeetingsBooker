@@ -41,6 +41,8 @@ public class ControllerLieux {
 
     @FXML private Button btnAjtLieu;
 
+    @FXML private Button btnSupprLieu;
+
     @FXML private Button btnRafraichir;
 
     @FXML private Button btnGestionSalle;
@@ -143,8 +145,8 @@ public class ControllerLieux {
 
         }else {
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setHeaderText("Sélectionnez un Lieu");
-            alert.getDialogPane().setContentText("Vous devez sélectionner un lieu afin gérer ses salles");
+            alert.setHeaderText("Selectionnez un Lieu");
+            alert.getDialogPane().setContentText("Vous devez selectionner un lieu afin gerer ses salles");
             alert.showAndWait();
         }
    }
@@ -163,7 +165,7 @@ public class ControllerLieux {
             Stage ajouterLieuStage = new Stage();
 
             ajouterLieuStage.setScene(new Scene(ajouterLieuLayout));
-            ajouterLieuStage.setTitle("Gestion des salles");
+            ajouterLieuStage.setTitle("Ajouter un Lieu");
             ajouterLieuStage.initModality(Modality.APPLICATION_MODAL);
             ajouterLieuStage.show();
         }catch (IOException e1) {
@@ -179,6 +181,20 @@ public class ControllerLieux {
     @FXML private void rafraichirClick(ActionEvent e){
         viderTableView();
         remplissagetableViewLieux();
+    }
+
+    @FXML private void supprimerLieuClick(ActionEvent e){
+        String id = tableLieux.getSelectionModel().getSelectedItem().getIdLieu();
+
+        if(id!=null){
+            LieuDAO.supprimerLieu(id);
+        }
+        else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Selectionnez un Lieu");
+            alert.getDialogPane().setContentText("Vous devez selectionner un lieu afin de pouvoir le supprimer");
+            alert.showAndWait();
+        }
     }
 
 

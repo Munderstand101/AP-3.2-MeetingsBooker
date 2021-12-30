@@ -84,4 +84,15 @@ public class LieuDAO {
             throwables.printStackTrace();
         }
     }
+
+    public static void supprimerLieu(String idLieu){
+        try {
+            PreparedStatement stmt = DBConnex.connexxion("DELETE FROM lieu WHERE idLieu=?");
+            stmt.setString(1, idLieu);
+            stmt.executeUpdate();
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
 }
