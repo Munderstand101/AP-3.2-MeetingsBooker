@@ -1,5 +1,6 @@
 package controller;
 
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -7,15 +8,13 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import model.DAO.FicheFraisDAO;
 import model.DAO.LieuDAO;
+import model.DAO.ReservationDAO;
 import model.DAO.UtilisateurDAO;
 import model.DTO.*;
 
@@ -38,6 +37,11 @@ public class ControllerLieux {
     @FXML private TableColumn<Lieu, Integer> colAnnul;
     @FXML private TableColumn<Lieu, Integer> colNbEtoiles;
 
+    @FXML private Label lblResaMois;
+    @FXML private Label lblResaAnn;
+    @FXML private Label lblCAMois;
+    @FXML private Label lblCAAnn;
+
 
     @FXML private Button btnAjtLieu;
 
@@ -47,9 +51,21 @@ public class ControllerLieux {
 
     @FXML private Button btnGestionSalle;
 
+    @FXML private ComboBox cmbBilResMois;
+
+    @FXML private ComboBox cmbBilResAnn;
+
+    @FXML private ComboBox cmbCAMois;
+
+    @FXML private ComboBox cmbCAAnn;
+
+
+
 
 
     private ObservableList<Lieu> data = FXCollections.observableArrayList();
+
+    private ObservableList<Integer> moisR = FXCollections.observableArrayList();
 
     private void remplissagetableViewLieu() {
         try {
@@ -106,8 +122,8 @@ public class ControllerLieux {
 
         colAnnul.setCellValueFactory(new PropertyValueFactory<Lieu, Integer>("annulationGratuite"));
         colNbEtoiles.setCellValueFactory(new PropertyValueFactory<Lieu, Integer>("nbEtoiles"));
-        colCoordx.setCellValueFactory(new PropertyValueFactory<Lieu, Double>("coordX"));
-        colCoordy.setCellValueFactory(new PropertyValueFactory<Lieu, Double>("coordY"));
+        //colCoordx.setCellValueFactory(new PropertyValueFactory<Lieu, Double>("coordX"));
+        //colCoordy.setCellValueFactory(new PropertyValueFactory<Lieu, Double>("coordY"));
 
         tableLieux.setItems(data);
     }
@@ -197,11 +213,118 @@ public class ControllerLieux {
         }
     }
 
+    @FXML private void bilResaMoisClick(ActionEvent e){
+        int index = tableLieux.getSelectionModel().getSelectedIndex();
+
+        if(index >= 0) {
+
+
+            Lieu unLieu = tableLieux.getSelectionModel().getSelectedItem();
+
+            int mois = cmbBilResMois.getSelectionModel().getSelectedIndex();
+
+
+
+            int item = ReservationDAO.nbReservationM(unLieu.getIdLieu(), mois+1);
+
+            lblResaMois.setText("Nombre de reservations : " + String.valueOf(item));
+
+
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Selectionnez un Lieu");
+            alert.getDialogPane().setContentText("Vous devez selectionner un lieu afin d'affcher son nombre de reservations");
+            alert.showAndWait();
+        }
+    }
+
+    @FXML private void bilResaAnnClick(ActionEvent e){
+        int index = tableLieux.getSelectionModel().getSelectedIndex();
+
+        if(index >= 0) {
+
+
+            Lieu unLieu = tableLieux.getSelectionModel().getSelectedItem();
+
+            int annee = (int) cmbBilResAnn.getSelectionModel().getSelectedItem();
+
+
+
+            int item = ReservationDAO.nbReservationA(unLieu.getIdLieu(), annee);
+
+            lblResaAnn.setText("Nombre de reservations : " + String.valueOf(item));
+
+
+
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Selectionnez un Lieu");
+            alert.getDialogPane().setContentText("Vous devez selectionner un lieu afin d'affcher son nombre de reservations");
+            alert.showAndWait();
+        }
+    }
+
+    @FXML private void bilCAMoisClick(ActionEvent e){
+        int index = tableLieux.getSelectionModel().getSelectedIndex();
+
+        if(index >= 0) {
+
+
+            Lieu unLieu = tableLieux.getSelectionModel().getSelectedItem();
+
+            int mois = cmbCAMois.getSelectionModel().getSelectedIndex();
+
+
+
+            Double item = ReservationDAO.caReservationM(unLieu.getIdLieu(), mois+1);
+
+            lblCAMois.setText("Chiffre d'affaire du lieu : " + String.valueOf(item));
+
+
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Selectionnez un Lieu");
+            alert.getDialogPane().setContentText("Vous devez selectionner un lieu afin d'afficher son chiffre d'affaire");
+            alert.showAndWait();
+        }
+    }
+
+    @FXML private void bilCAAnnClick(ActionEvent e){
+        int index = tableLieux.getSelectionModel().getSelectedIndex();
+
+        if(index >= 0) {
+
+
+            Lieu unLieu = tableLieux.getSelectionModel().getSelectedItem();
+
+            int annee = (int) cmbCAAnn.getSelectionModel().getSelectedItem();
+
+
+
+            Double item = ReservationDAO.caReservationA(unLieu.getIdLieu(), annee);
+
+            lblCAAnn.setText("Chiffre d'affaire du lieu : " + String.valueOf(item));
+
+
+        }else{
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Selectionnez un Lieu");
+            alert.getDialogPane().setContentText("Vous devez selectionner un lieu afin d'afficher son chiffre d'affaire");
+            alert.showAndWait();
+        }
+    }
+
 
 
     public void initialize() {
 
+
         remplissagetableViewLieux();
+
+        cmbBilResMois.getItems().addAll("Janvier","Fevrier","Mars","Avril","Mai","Juin","Juillet","Aout","Septembre","Octobre","Novembre","Decembre");
+        cmbBilResAnn.getItems().addAll(2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030);
+        cmbCAMois.getItems().addAll("Janvier","Fevrier","Mars","Avril","Mai","Juin","Juillet","Aout","Septembre","Octobre","Novembre","Decembre");
+        cmbCAAnn.getItems().addAll(2019,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,2030);
     }
 
 
