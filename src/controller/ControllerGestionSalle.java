@@ -183,4 +183,39 @@ public class ControllerGestionSalle {
         }
 
     }
+
+    @FXML private void modifierSalle(ActionEvent e){
+
+        int index = tableSalles.getSelectionModel().getSelectedIndex();
+
+
+        if(index >= 0) {
+
+            Salle uneSalle = tableSalles.getSelectionModel().getSelectedItem();
+            try {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("../view/viewModifierSalle.fxml"));
+
+                Parent modifierSalleLayout = (Parent) loader.load();
+
+                ControllerModifierSalle setController = loader.getController();
+
+                setController.transfertFunction(uneSalle);
+
+                Stage modifierSalleStage = new Stage();
+
+                modifierSalleStage.setScene(new Scene(modifierSalleLayout));
+                modifierSalleStage.setTitle("Modifier un Lieu");
+                modifierSalleStage.initModality(Modality.APPLICATION_MODAL);
+                modifierSalleStage.show();
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        }else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Selectionnez une Salle");
+            alert.getDialogPane().setContentText("Vous devez selectionner une salle afin de la modifier");
+            alert.showAndWait();
+        }
+    }
 }

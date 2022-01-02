@@ -70,4 +70,24 @@ public class SalleDAO {
         }
     }
 
+    public static void modifierSalle(String idSalle, String nomSalle, int largeur,
+                                    int longueur, int surface, int hauteur, int capacite,
+                                    Double tarif){
+        try {
+            PreparedStatement stmt = DBConnex.connexxion("UPDATE salle SET nomSalle=?, largeur=?, longueur=?, surface=?, hauteur=?, capacite=?, tarifDemiJournee=? WHERE idSalle=?");
+            stmt.setString(1, nomSalle);
+            stmt.setInt(2,largeur);
+            stmt.setInt(3,longueur);
+            stmt.setInt(4,surface);
+            stmt.setInt(5,hauteur);
+            stmt.setInt(6, capacite);
+            stmt.setDouble(7, tarif);
+            stmt.setString(8, idSalle);
+            stmt.executeUpdate();
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
 }

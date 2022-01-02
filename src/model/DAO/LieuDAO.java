@@ -85,6 +85,26 @@ public class LieuDAO {
         }
     }
 
+    public static void modifierLieu(String idVille, String idEntreprise, String libelleLieu,
+                                   String adresseLieu, int annulationGratuite,
+                                   int nbEtoiles, String descriptif, String idLieu){
+        try {
+            PreparedStatement stmt = DBConnex.connexxion("UPDATE lieu SET idVille=?, idEntreprise=?, libelleLieu=?, adresseLieu=?, annulationGratuite=?, nbEtoiles=?, descriptif=? WHERE idLieu=?");
+            stmt.setString(1, idVille);
+            stmt.setString(2, idEntreprise);
+            stmt.setString(3,libelleLieu);
+            stmt.setString(4,adresseLieu);
+            stmt.setInt(5, annulationGratuite);
+            stmt.setInt(6, nbEtoiles);
+            stmt.setString(7,descriptif);
+            stmt.setString(8,idLieu);
+            stmt.executeUpdate();
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+    }
+
     public static void supprimerLieu(String idLieu){
         try {
             PreparedStatement stmt = DBConnex.connexxion("DELETE FROM lieu WHERE idLieu=?");

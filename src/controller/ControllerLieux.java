@@ -314,6 +314,40 @@ public class ControllerLieux {
         }
     }
 
+    @FXML private void modifierLieuClick(ActionEvent e){
+
+        int index = tableLieux.getSelectionModel().getSelectedIndex();
+
+
+        if(index >= 0) {
+
+            Lieu unLieu = tableLieux.getSelectionModel().getSelectedItem();
+            try {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("../view/viewModifierLieu.fxml"));
+
+                Parent modifierLieuLayout = (Parent) loader.load();
+
+                ControllerModifierLieu setController = loader.getController();
+
+                setController.transfertFunction(unLieu);
+
+                Stage modifierLieuStage = new Stage();
+
+                modifierLieuStage.setScene(new Scene(modifierLieuLayout));
+                modifierLieuStage.setTitle("Modifier un Lieu");
+                modifierLieuStage.initModality(Modality.APPLICATION_MODAL);
+                modifierLieuStage.show();
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        }else {
+            Alert alert = new Alert(Alert.AlertType.ERROR);
+            alert.setHeaderText("Selectionnez un Lieu");
+            alert.getDialogPane().setContentText("Vous devez selectionner un lieu afin de le modifier");
+            alert.showAndWait();
+        }
+    }
 
 
     public void initialize() {

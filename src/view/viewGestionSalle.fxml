@@ -22,5 +22,6 @@
       <Button fx:id="btnSupprSalle" layoutX="35.0" layoutY="419.0" mnemonicParsing="false" onAction="#supprimerSalleClick" text="Supprimer une salle" />
       <Button fx:id="btnRafraichir" layoutX="205.0" layoutY="419.0" mnemonicParsing="false" onAction="#rafraichirClick" text="Rafraichir" />
       <Button fx:id="btnAjouterSalle" layoutX="332.0" layoutY="419.0" mnemonicParsing="false" onAction="#ajouterSalleClick" text="Ajouter une salle" />
+      <Button layoutX="483.0" layoutY="419.0" mnemonicParsing="false" onAction="#modifierSalle" text="Modifier une salle" />
    </children>
 </AnchorPane>

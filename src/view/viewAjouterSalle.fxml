@@ -32,5 +32,10 @@
          </font>
       </Button>
       <Label fx:id="nomLieu" layoutX="211.0" layoutY="26.0" />
+      <Label layoutX="181.0" layoutY="9.0" text="Ajouter une Salle">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

@@ -34,5 +34,6 @@
       <Label fx:id="lblCAMois" layoutX="516.0" layoutY="511.0" text="Chiffre d'affaire du lieu :" />
       <ComboBox fx:id="cmbCAAnn" layoutX="510.0" layoutY="583.0" onAction="#bilCAAnnClick" prefHeight="25.0" prefWidth="122.0" />
       <Label fx:id="lblCAAnn" layoutX="516.0" layoutY="626.0" text="Chiffre d'affaire du lieu :" />
+      <Button layoutX="34.0" layoutY="596.0" mnemonicParsing="false" onAction="#modifierLieuClick" text="Modifier un lieu" />
    </children>
 </AnchorPane>
