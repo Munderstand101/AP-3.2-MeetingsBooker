@@ -2,6 +2,7 @@ package controller;
 
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -19,7 +20,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 import model.DAO.DBConnex;
+import model.Settings;
 
 
 public class ControllerIdentification implements Initializable {
@@ -33,8 +36,9 @@ public class ControllerIdentification implements Initializable {
 	@FXML private TextField portTextField;
 	@FXML private TextField loginTextField;
 	@FXML private PasswordField mdpPasswordField;
-	
-	
+	@FXML private Button btnValiderIdentification;
+
+
 	/**
 	 * Methode associee a l'evenement click sur le bouton valider
 	 * @param e
@@ -56,18 +60,6 @@ public class ControllerIdentification implements Initializable {
 				
 			 FXMLLoader loader = new FXMLLoader();
 			 messageConnexionLabel.setText("");
-			 
-
-			 /*
-			 TODO
-			 COMMERCIAL
-			 commerciaux et administrateur
-			 commercial
-			 ControllerClientsFiche
-ControllerFicheClient
-
-viewClientsFiche
-			  */
 
 			 if(rs.getNString("statut").equals("commerciaux") || rs.getNString("statut").equals("administrateur") ) {
 			 		loader.setLocation(Main.class.getResource("../view/viewListeFichesClients.fxml"));
@@ -79,34 +71,8 @@ viewClientsFiche
 			 		comptableListeFichesStage.setTitle("MeetingsBooker - commerciaux");
 			 		comptableListeFichesStage.initModality(Modality.APPLICATION_MODAL);		 		
 			 		comptableListeFichesStage.show();
-			 	}   
-/*
-			 if(rs.getNString("statut").equals("loueurs") || rs.getNString("statut").equals("administrateur")) {
-			 		loader.setLocation(Main.class.getResource("../view/viewLoueurs.fxml"));
-			 		Pane comptableListeFichesLayout = (Pane) loader.load();
-	            	Stage comptableListeFichesStage = new Stage();
-			 		Scene comptableListeFichesScene = new Scene(comptableListeFichesLayout);
-			 		comptableListeFichesStage.setScene(comptableListeFichesScene);
-	           		
-			 		comptableListeFichesStage.setTitle("MeetingsBooker - loueurs");
-			 		comptableListeFichesStage.initModality(Modality.APPLICATION_MODAL);		 		
-			 		comptableListeFichesStage.show();
-			 	}   
 
-			 if(rs.getNString("statut").equals("réservants")) {
-			 		loader.setLocation(Main.class.getResource("../view/viewRéservants.fxml"));
-			 		Pane reservantsLayout = (Pane) loader.load();
-	            	Stage reservantsStage = new Stage();
-			 		Scene reservantsScene = new Scene(reservantsLayout);
-					 reservantsStage.setScene(reservantsScene);
-
-					 reservantsStage.setTitle("MeetingsBooker - réservants");
-					 reservantsStage.initModality(Modality.APPLICATION_MODAL);
-					 reservantsStage.show();
-			 	}   
-*/
-			 
-			 
+			 }
 			}
 			else {
 				messageConnexionLabel.setText("Login ou mot de passe incorrect !");
@@ -115,8 +81,6 @@ viewClientsFiche
 		} catch(Exception e1) {
 			e1.printStackTrace();
 		}
-		
-			
 	}
 
 	/**
@@ -127,7 +91,8 @@ viewClientsFiche
 
 
 		try {
-			FXMLLoader loader = new FXMLLoader();;
+			FXMLLoader loader = new FXMLLoader();
+			;
 			Stage configurationStage = new Stage();
 
 			loader.setLocation(Main.class.getResource("../view/viewConfiguration.fxml"));
@@ -138,8 +103,7 @@ viewClientsFiche
 			configurationStage.setTitle("MeetingsBooker - configuration");
 			configurationStage.initModality(Modality.APPLICATION_MODAL);
 			configurationStage.show();
-		}
-		catch (IOException e) {
+		} catch (IOException e) {
 			e.printStackTrace();
 		}
 
@@ -165,8 +129,13 @@ viewClientsFiche
 	public void initialize(URL location , ResourceBundle ressources) {
 		loginTextField.setText("valentin");
 		mdpPasswordField.setText("valentin");
+
+		Settings.db_host = "localhost:3307";
+		Settings.db_name = "MeetingsBooker5";
+		Settings.db_user = "root";
+		Settings.db_password = "";
 	}
-	
-	
+
+
 
 }

@@ -10,8 +10,8 @@
 	<children>
 		<TextField fx:id="loginTextField" layoutX="161.0" layoutY="64.0" prefHeight="25.0" prefWidth="186.0" />
 		<PasswordField fx:id="mdpPasswordField" layoutX="161.0" layoutY="106.0" prefHeight="25.0" prefWidth="186.0" />
-		<Button layoutX="248.0" layoutY="167.0" mnemonicParsing="false" onAction="#buttonValiderIdentificationClick" prefHeight="27.0" prefWidth="60.0" text="Valider" />
-		<Button layoutX="319.0" layoutY="167.0" mnemonicParsing="false" onAction="#buttonQuitterIdentificationClick" prefHeight="27.0" prefWidth="60.0" text="Quitter" />
+		<Button id="btnValiderIdentification" layoutX="248.0" layoutY="167.0" mnemonicParsing="false" onAction="#buttonValiderIdentificationClick" prefHeight="27.0" prefWidth="60.0" text="Valider" />
+		<Button id="btnQuitterIdentification" layoutX="319.0" layoutY="167.0" mnemonicParsing="false" onAction="#buttonQuitterIdentificationClick" prefHeight="27.0" prefWidth="60.0" text="Quitter" />
 		<Label layoutX="64.0" layoutY="16.0" text="| Identification">
 			<font>
 				<Font size="24.0" />

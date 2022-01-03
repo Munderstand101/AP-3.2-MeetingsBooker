@@ -1,6 +1,8 @@
 package model.DTO;
 
 public class FicheClient {
+    private String idLoueur;
+    private String idEntreprise;
     private String nomEntreprise;
     private String adresseEntreprise;
     private String vilePays;
@@ -11,7 +13,9 @@ public class FicheClient {
     private String mailContact;
     private String telContact;
 
-    public FicheClient(String nomEntreprise, String adresseEntreprise, String vilePays, String telEntreprise, String emailEntreprise, String nomPrenomContact, Boolean etatContact, String mailContact, String telContact) {
+    public FicheClient(String idLoueur, String idEntreprise, String nomEntreprise, String adresseEntreprise, String vilePays, String telEntreprise, String emailEntreprise, String nomPrenomContact, Boolean etatContact, String mailContact, String telContact) {
+        this.idLoueur = idLoueur;
+        this.idEntreprise = idEntreprise;
         this.nomEntreprise = nomEntreprise;
         this.adresseEntreprise = adresseEntreprise;
         this.vilePays = vilePays;
@@ -21,6 +25,22 @@ public class FicheClient {
         this.etatContact = etatContact;
         this.mailContact = mailContact;
         this.telContact = telContact;
+    }
+
+    public String getIdEntreprise() {
+        return idEntreprise;
+    }
+
+    public void setIdEntreprise(String idEntreprise) {
+        this.idEntreprise = idEntreprise;
+    }
+
+    public String getIdLoueur() {
+        return idLoueur;
+    }
+
+    public void setIdLoueur(String idLoueur) {
+        this.idLoueur = idLoueur;
     }
 
     public String getNomEntreprise() {

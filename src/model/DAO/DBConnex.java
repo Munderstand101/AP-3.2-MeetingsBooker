@@ -1,12 +1,19 @@
 package model.DAO;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import model.Settings;
+
+import java.sql.*;
 
 public class DBConnex {
+
+	public static Connection getConnexion() throws SQLException {
+
+		//Connection connexion = DriverManager.getConnection("jdbc:mysql://" + Settings.db_host + "/" + Settings.db_name + "?user=" + Settings.db_user + "&password=" + Settings.db_password + "");
+		Connection connexion = DriverManager.getConnection("jdbc:mariadb://" + Settings.db_host + "/" + Settings.db_name + "?user=" + Settings.db_user + "&password=" + Settings.db_password + "");
+
+		return connexion;
+
+	}
 	/**
 	 * M�thode de connexion � la base de donn�es
 	 * @return  Statement
@@ -77,7 +84,24 @@ public class DBConnex {
 			}
 		 return rs;
 	}
-	
+/*
+	public static ResultSet  getRS2(Statement unStatement) {
+
+		ResultSet rs = null ;
+		 try {
+				rs = unStatement.executeQuery();
+				if (!rs.next()) {
+					rs =null;
+				}
+
+		    } catch (SQLException e) {
+				e.printStackTrace();
+				System.out.println(e.getMessage());
+
+			}
+		 return rs;
+	}*/
+
 	/**
 	  * M�thode permettant l'envoi de requ�tes "update, insert, delete" � la base de donn�es
 	 * @param requete
@@ -98,6 +122,5 @@ public class DBConnex {
 			}
 		 return reponse;
 	}
-	
 
 }

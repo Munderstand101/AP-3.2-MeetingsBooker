@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="469.0" prefWidth="916.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerListeLieuxClient">
+    <ImageView fitHeight="30.0" fitWidth="36.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@../res/images/mblogo3.png" />
+        </image>
+    </ImageView>
+    <Label layoutX="54.0" layoutY="15.0" text="| Liste des lieux proposés par le client">
+        <font>
+            <Font size="18.0" />
+        </font>
+    </Label>
+    <TableView fx:id="tableListeLieuxParClient" layoutX="18.0" layoutY="58.0" prefHeight="234.0" prefWidth="876.0">
+        <columns>
+            <TableColumn fx:id="colNomEntreprise" prefWidth="100.0" text="Nom Entreprise" />
+            <TableColumn fx:id="colLibelleLieu" prefWidth="118.0" text="Libelle Lieu" />
+            <TableColumn fx:id="colAdresseLieu" prefWidth="100.0" text="Adresse Lieu" />
+            <TableColumn fx:id="colCoordX" prefWidth="100.0" text="CoordX" />
+            <TableColumn fx:id="colCoordY" prefWidth="100.0" text="CoordY" />
+            <TableColumn fx:id="colAnnulationGratuite" prefWidth="113.0" text="AnnulationGratuite" />
+            <TableColumn fx:id="colNbEtoiles" prefWidth="76.0" text="NbEtoiles" />
+            <TableColumn fx:id="colDescriptif" prefWidth="92.0" text="Descriptif" />
+            <TableColumn fx:id="colVilePays" prefWidth="69.0" text="Vile/Pays" />
+        </columns>
+    </TableView>
+   <Label layoutX="18.0" layoutY="310.0" text="Liste des réservations par lieu">
+      <font>
+         <Font size="18.0" />
+      </font>
+   </Label>
+   <TableView fx:id="tableListeReservationsParLieu" layoutX="18.0" layoutY="337.0" prefHeight="119.0" prefWidth="684.0">
+      <columns>
+         <TableColumn fx:id="colNomEntreprise1" prefWidth="100.0" text="Nom Entreprise" />
+         <TableColumn fx:id="colNomSalle" prefWidth="118.0" text="Nom Salle" />
+         <TableColumn fx:id="colDateResa" prefWidth="100.0" text="Date Resa" />
+         <TableColumn fx:id="colNbPersonnes" prefWidth="100.0" text="Nb Personnes" />
+         <TableColumn fx:id="colVilePays1" prefWidth="92.0" text="Vile/Pays" />
+         <TableColumn fx:id="colDateDebut" prefWidth="69.0" text="DateDebut" />
+         <TableColumn fx:id="colTarifDemiJournee" prefWidth="100.0" text="Tarif" />
+      </columns>
+   </TableView>
+   <Label fx:id="labelTotal" layoutX="734.0" layoutY="343.0" text="Total : " />
+
+</AnchorPane>
