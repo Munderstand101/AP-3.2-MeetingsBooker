@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="424.0" prefWidth="326.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerModifierFicheClient">
+
+    <children>
+        <ImageView fitHeight="30.0" fitWidth="36.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../res/images/mblogo3.png" />
+            </image>
+        </ImageView>
+        <Label layoutX="58.0" layoutY="15.0" text="| Ajouter une fiche client">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Label>
+        <ComboBox fx:id="cbxVillePays" layoutX="134.0" layoutY="71.0" prefWidth="150.0" promptText="Ville/Pays">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="-"/>
+                </FXCollections>
+            </items>
+        </ComboBox>
+
+
+        <Label layoutX="72.0" layoutY="75.0" text="Ville/Pays :" />
+        <Label layoutX="41.0" layoutY="104.0" text="Nom Entreprise :" />
+        <TextField fx:id="nomEntreprise" layoutX="134.0" layoutY="100.0" />
+        <TextField fx:id="adresseEntreprise" layoutX="134.0" layoutY="129.0" />
+        <TextField fx:id="telEntreprise" layoutX="135.0" layoutY="158.0" />
+        <TextField fx:id="emailEntreprise" layoutX="135.0" layoutY="187.0" />
+        <TextField fx:id="nomContact" layoutX="134.0" layoutY="221.0" />
+        <TextField fx:id="prenomContact" layoutX="135.0" layoutY="251.0" />
+        <Label layoutX="26.0" layoutY="133.0" text="Adresse Entreprise :" />
+        <Label layoutX="53.0" layoutY="162.0" text="Tel Entreprise :" />
+        <Label layoutX="40.0" layoutY="191.0" text="Email Entreprise :" />
+        <Label layoutX="54.0" layoutY="225.0" text="Nom Contact :" />
+        <Label layoutX="40.0" layoutY="255.0" text="Prenom Contact :" />
+
+        <Separator layoutX="9.0" layoutY="217.0" prefHeight="0.0" prefWidth="317.0" />
+        <TextField fx:id="telContact" layoutX="135.0" layoutY="310.0" />
+        <Label layoutX="68.0" layoutY="314.0" text="Tel Contact :" />
+        <TextField fx:id="mailContact" layoutX="134.0" layoutY="339.0" />
+        <Label layoutX="54.0" layoutY="342.0" text="Email Contact :" />
+
+        <Label layoutX="49.0" layoutY="286.0" text="Est contacter ? :" />
+        <ComboBox fx:id="estContacter" layoutX="135.0" layoutY="281.0" prefWidth="150.0" promptText="Oui|Non">
+            <items>
+                <FXCollections fx:factory="observableArrayList">
+                    <String fx:value="Non"/>
+                    <String fx:value="Oui"/>
+                </FXCollections>
+            </items>
+        </ComboBox>
+
+        <Button fx:id="btnModifierFicheClient" layoutX="157.0" layoutY="376.0" mnemonicParsing="false" onAction="#buttonModifierFicheClientClick" prefHeight="27.0" prefWidth="66.0" text="Modifier" />
+        <Button fx:id="btnAnnulerFicheClient" layoutX="227.0" layoutY="377.0" mnemonicParsing="false" onAction="#buttonAnnulerFicheClientClick" text="Annuler" />
+
+     </children>
+
+</AnchorPane>

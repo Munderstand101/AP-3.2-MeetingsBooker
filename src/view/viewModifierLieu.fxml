@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerModifierLieu">
+   <children>
+      <TextField fx:id="libelleLieuTxt" layoutX="36.0" layoutY="94.0" />
+      <TextField fx:id="adresseLieuTxt" layoutX="36.0" layoutY="175.0" />
+      <TextField fx:id="descriptifLieuTxt" layoutX="36.0" layoutY="258.0" />
+      <Label layoutX="36.0" layoutY="62.0" text="Libelle d'un lieu" />
+      <Label layoutX="36.0" layoutY="143.0" text="Adresse d'un Lieu" />
+      <Label layoutX="36.0" layoutY="228.0" text="Descriptif" />
+      <Label layoutX="347.0" layoutY="45.0" text="Id de l'entreprise" />
+      <Label layoutX="344.0" layoutY="111.0" text="Id de la ville" />
+      <Label layoutX="339.0" layoutY="167.0" text="Annulation Gratuite" />
+      <Label layoutX="345.0" layoutY="220.0" text="Nombre d'etoiles" />
+      <TextField fx:id="idEntrepriseTxt" editable="false" layoutX="340.0" layoutY="67.0" prefHeight="25.0" prefWidth="32.0" />
+      <TextField fx:id="idVilleTxt" editable="false" layoutX="344.0" layoutY="139.0" prefHeight="25.0" prefWidth="32.0" />
+      <TextField fx:id="annulGratuiteTxt" editable="false" layoutX="344.0" layoutY="188.0" prefHeight="25.0" prefWidth="32.0" />
+      <TextField fx:id="nbEtoileTxt" editable="false" layoutX="345.0" layoutY="246.0" prefHeight="25.0" prefWidth="32.0" />
+      <ComboBox fx:id="cmbIdEntreprise" layoutX="391.0" layoutY="67.0" onAction="#idE" prefHeight="25.0" prefWidth="114.0" />
+      <ComboBox fx:id="cmbIdVille" layoutX="391.0" layoutY="131.0" onAction="#idV" prefHeight="25.0" prefWidth="114.0" />
+      <ComboBox fx:id="cmbAnnul" layoutX="391.0" layoutY="188.0" onAction="#aGr" prefHeight="25.0" prefWidth="114.0" />
+      <ComboBox fx:id="cmbNbEtoile" layoutX="391.0" layoutY="246.0" onAction="#nbE" prefHeight="25.0" prefWidth="114.0" />
+      <Button fx:id="btnModifLieu" layoutX="240.0" layoutY="336.0" mnemonicParsing="false" onAction="#modifLieu" text="Modifier">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label fx:id="test" layoutX="206.0" layoutY="14.0" text="Modifier un lieu">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

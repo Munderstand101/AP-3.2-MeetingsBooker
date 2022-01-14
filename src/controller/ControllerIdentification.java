@@ -1,10 +1,14 @@
 package controller;
 
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.Pane;
+
+import java.io.IOException;
 import java.net.URL;
 import java.sql.ResultSet;
 import java.util.ResourceBundle;
@@ -16,7 +20,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.Window;
 import model.DAO.DBConnex;
+import model.Settings;
 
 
 public class ControllerIdentification implements Initializable {
@@ -30,8 +36,9 @@ public class ControllerIdentification implements Initializable {
 	@FXML private TextField portTextField;
 	@FXML private TextField loginTextField;
 	@FXML private PasswordField mdpPasswordField;
-	
-	
+	@FXML private Button btnValiderIdentification;
+
+
 	/**
 	 * Methode associee a l'evenement click sur le bouton valider
 	 * @param e
@@ -53,46 +60,21 @@ public class ControllerIdentification implements Initializable {
 				
 			 FXMLLoader loader = new FXMLLoader();
 			 messageConnexionLabel.setText("");
-			 
-			 
-			 if(rs.getNString("statut").equals("comptable")) {
-			 		loader.setLocation(Main.class.getResource("../view/viewComptableListeFiches.fxml"));
+
+			 if(rs.getNString("statut").equals("commerciaux") || rs.getNString("statut").equals("administrateur") ) {
+//			 		loader.setLocation(Main.class.getResource("../view/viewListeFichesClients.fxml"));
+			 		loader.setLocation(Main.class.getResource("../view/viewMenuComerciaux.fxml"));
 			 		Pane comptableListeFichesLayout = (Pane) loader.load();
 	            	Stage comptableListeFichesStage = new Stage();
 			 		Scene comptableListeFichesScene = new Scene(comptableListeFichesLayout);
 			 		comptableListeFichesStage.setScene(comptableListeFichesScene);
 	           		
-			 		comptableListeFichesStage.setTitle("GSB Gestion des frais - Compta Fiche de frais");
+			 		comptableListeFichesStage.setTitle("MeetingsBooker - commerciaux");
 			 		comptableListeFichesStage.initModality(Modality.APPLICATION_MODAL);		 		
 			 		comptableListeFichesStage.show();
-			 	}   
-			 
-			 if(rs.getNString("statut").equals("gestion")) {
-			 		loader.setLocation(Main.class.getResource("../view/viewGestionaireListeFiches.fxml"));
-			 		Pane comptableListeFichesLayout = (Pane) loader.load();
-	            	Stage comptableListeFichesStage = new Stage();
-			 		Scene comptableListeFichesScene = new Scene(comptableListeFichesLayout);
-			 		comptableListeFichesStage.setScene(comptableListeFichesScene);
-	           		
-			 		comptableListeFichesStage.setTitle("GSB Gestion des frais - gestion");
-			 		comptableListeFichesStage.initModality(Modality.APPLICATION_MODAL);		 		
-			 		comptableListeFichesStage.show();
-			 	}   
-			 
-			 if(rs.getNString("statut").equals("visiteur")) {
-			 		loader.setLocation(Main.class.getResource("../view/viewVisiteurListeFiches.fxml"));
-			 		Pane comptableListeFichesLayout = (Pane) loader.load();
-	            	Stage comptableListeFichesStage = new Stage();
-			 		Scene comptableListeFichesScene = new Scene(comptableListeFichesLayout);
-			 		comptableListeFichesStage.setScene(comptableListeFichesScene);
-	           		
-			 		comptableListeFichesStage.setTitle("GSB Gestion des frais - visiteur");
-			 		comptableListeFichesStage.initModality(Modality.APPLICATION_MODAL);		 		
-			 		comptableListeFichesStage.show();
-			 	}   
-			 
-			 
-			 
+
+			 }
+
 			}
 			else {
 				messageConnexionLabel.setText("Login ou mot de passe incorrect !");
@@ -101,30 +83,61 @@ public class ControllerIdentification implements Initializable {
 		} catch(Exception e1) {
 			e1.printStackTrace();
 		}
-		
-			
 	}
 
 	/**
-	 * Fermeture de l'application associ�e au click sur le boton quitter
+	 * Methode associee a l'evenement click sur le bouton valider
+	 * @param e
+	 */
+	@FXML	protected void buttonOuvrirLaConfigurationClick(ActionEvent event) {
+
+
+		try {
+			FXMLLoader loader = new FXMLLoader();
+			;
+			Stage configurationStage = new Stage();
+
+			loader.setLocation(Main.class.getResource("../view/viewConfiguration.fxml"));
+			Pane configurationLayout = (Pane) loader.load();
+			Scene configurationScene = new Scene(configurationLayout);
+			configurationStage.setScene(configurationScene);
+
+			configurationStage.setTitle("MeetingsBooker - configuration");
+			configurationStage.initModality(Modality.APPLICATION_MODAL);
+			configurationStage.show();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+
+
+	}
+
+
+	/**
+	 * Fermeture de l'application associée au clic sur le bouton quitter
 	 * @param e
 	 */
 	@FXML
-	protected void quitterIdentificationButton(ActionEvent e) {
+	protected void buttonQuitterIdentificationClick(ActionEvent e) {
 		Platform.exit();
-		
 	}
 
 	/**
-	 * Valeurs par d�faut pour la connexion au SGBD
-	 * A l'inicilisation du contr�leur 
+	 * Valeurs par défaut pour la connexion au SGBD
+	 * A l'initialisation du controleur
 	 ***/
 	@Override
 	public void initialize(URL location , ResourceBundle ressources) {
-		serveurTextField.setText("127.0.0.1");
-		portTextField.setText("3306");
+		loginTextField.setText("valentin");
+		mdpPasswordField.setText("valentin");
+
+		Settings.db_host = "localhost:3307";
+		Settings.db_name = "MeetingsBooker5";
+		Settings.db_user = "root";
+		Settings.db_password = "";
 	}
-	
-	
+
+
 
 }

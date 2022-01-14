@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane fx:id="ajouterSalle" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerAjouterSalle">
+   <children>
+      <Label layoutX="32.0" layoutY="43.0" text="Nom de la salle" />
+      <TextField fx:id="nomSalleTxt" layoutX="32.0" layoutY="71.0" />
+      <Slider fx:id="sLargeur" blockIncrement="1.0" layoutX="28.0" layoutY="136.0" max="150.0" showTickLabels="true" />
+      <Label layoutX="32.0" layoutY="111.0" text="Largeur" />
+      <Label layoutX="28.0" layoutY="201.0" text="Longueur" />
+      <Label layoutX="28.0" layoutY="289.0" text="Surface" />
+      <Label layoutX="344.0" layoutY="52.0" text="Hauteur" />
+      <Label layoutX="343.0" layoutY="136.0" text="Capacite" />
+      <Label layoutX="338.0" layoutY="234.0" prefHeight="17.0" prefWidth="98.0" text="TarifDemiJournee" />
+      <Slider fx:id="sLongueur" blockIncrement="1.0" layoutX="28.0" layoutY="226.0" max="150.0" showTickLabels="true" />
+      <Slider fx:id="sSurface" layoutX="28.0" layoutY="316.0" max="150.0" showTickLabels="true" />
+      <Label fx:id="lblLargeur" layoutX="28.0" layoutY="176.0" text="0" />
+      <Label fx:id="lblLongueur" layoutX="28.0" layoutY="265.0" text="0" />
+      <Label fx:id="lblSurface" layoutX="28.0" layoutY="356.0" text="0" />
+      <Slider fx:id="sHauteur" layoutX="343.0" layoutY="77.0" showTickLabels="true" />
+      <Slider fx:id="sCapacite" blockIncrement="1.0" layoutX="343.0" layoutY="162.0" max="500.0" prefHeight="33.0" prefWidth="209.0" showTickLabels="true" />
+      <Label fx:id="lblHauteur" layoutX="341.0" layoutY="111.0" text="0" />
+      <Label fx:id="lblCapacite" layoutX="345.0" layoutY="201.0" text="0" />
+      <Slider fx:id="sTarif" blockIncrement="1.0" layoutX="283.0" layoutY="267.0" max="1000.0" prefHeight="33.0" prefWidth="309.0" showTickLabels="true" />
+      <Label fx:id="lblTarif" layoutX="286.0" layoutY="308.0" text="0" />
+      <Button fx:id="btnAjouter" layoutX="290.0" layoutY="331.0" mnemonicParsing="false" onAction="#ajouterSalleClick" prefHeight="51.0" prefWidth="219.0" text="Ajouter">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Label fx:id="nomLieu" layoutX="211.0" layoutY="26.0" />
+      <Label layoutX="181.0" layoutY="9.0" text="Ajouter une Salle">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

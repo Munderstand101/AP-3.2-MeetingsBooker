@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="viewSalles" prefHeight="595.0" prefWidth="830.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerGestionSalle">
+   <children>
+      <TableView fx:id="tableSalles" layoutY="95.0" prefHeight="263.0" prefWidth="715.0">
+          <columns>
+              <TableColumn fx:id="colIdLieuS" prefWidth="75.0" text="idLieu" />
+              <TableColumn fx:id="colNomSalle" prefWidth="75.0" text="nomSalle" />
+              <TableColumn fx:id="colLargeur" prefWidth="75.0" text="Largeur" />
+              <TableColumn fx:id="colLongueur" prefWidth="75.0" text="Longueur" />
+              <TableColumn fx:id="colSurface" prefWidth="75.0" text="Surface" />
+              <TableColumn fx:id="colHauteur" prefWidth="75.0" text="Hauteur" />
+              <TableColumn fx:id="colCapacite" prefWidth="75.0" text="Capacité" />
+              <TableColumn fx:id="colTarif" prefWidth="113.0" text="TarifDemiJournée" />
+              <TableColumn fx:id="colIdSalle" prefWidth="75.0" text="idSalle" />
+          </columns>
+      </TableView>
+      <Label fx:id="nomLieu" layoutX="14.0" layoutY="43.0" prefHeight="12.0" prefWidth="202.0" />
+      <Button fx:id="btnSupprSalle" layoutX="35.0" layoutY="419.0" mnemonicParsing="false" onAction="#supprimerSalleClick" text="Supprimer une salle" />
+      <Button fx:id="btnRafraichir" layoutX="205.0" layoutY="419.0" mnemonicParsing="false" onAction="#rafraichirClick" text="Rafraichir" />
+      <Button fx:id="btnAjouterSalle" layoutX="332.0" layoutY="419.0" mnemonicParsing="false" onAction="#ajouterSalleClick" text="Ajouter une salle" />
+      <Button layoutX="483.0" layoutY="419.0" mnemonicParsing="false" onAction="#modifierSalle" text="Modifier une salle" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerModifierSalle">
+   <children>
+      <Label layoutX="208.0" layoutY="35.0" text="Modifier une salle">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnModifier" layoutX="239.0" layoutY="313.0" mnemonicParsing="false" onAction="#modifierSalle" text="Modifier">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Label layoutX="26.0" layoutY="82.0" text="Nom de la salle" />
+      <Label layoutX="21.0" layoutY="151.0" text="Largeur" />
+      <TextField fx:id="nomSalleTxt" layoutX="21.0" layoutY="109.0" />
+      <TextField fx:id="largeurTxt" layoutX="14.0" layoutY="175.0" />
+      <TextField fx:id="longueurTxt" layoutX="14.0" layoutY="233.0" />
+      <Label layoutX="12.0" layoutY="207.0" text="Longueur" />
+      <Label layoutX="381.0" layoutY="101.0" text="Hauteur" />
+      <Label layoutX="380.0" layoutY="167.0" text="Capacite" />
+      <Label layoutX="381.0" layoutY="237.0" text="Tarif a la demi journee" />
+      <Label layoutX="12.0" layoutY="275.0" text="Surface" />
+      <TextField fx:id="surfaceTxt" layoutX="12.0" layoutY="301.0" />
+      <TextField fx:id="tarifTxt" layoutX="381.0" layoutY="263.0" />
+      <TextField fx:id="hauteurTxt" layoutX="381.0" layoutY="126.0" />
+      <TextField fx:id="capaciteTxt" layoutX="381.0" layoutY="195.0" />
+   </children>
+</AnchorPane>

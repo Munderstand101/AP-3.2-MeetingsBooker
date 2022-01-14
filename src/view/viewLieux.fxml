@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="viewLieux" prefHeight="676.0" prefWidth="1032.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ControllerLieux">
+   <children>
+      <Button fx:id="btnAjtLieu" layoutX="36.0" layoutY="519.0" mnemonicParsing="false" onAction="#buttonAjouterLieuClick" text="Ajouter un lieu" />
+      <ComboBox fx:id="cmbBilResMois" layoutX="233.0" layoutY="470.0" onAction="#bilResaMoisClick" prefHeight="25.0" prefWidth="111.0" />
+      <Button fx:id="btnGestionSalle" layoutX="35.0" layoutY="482.0" mnemonicParsing="false" onAction="#btnOuvrirGestionSalle" text="Gérer les salles d'un Lieu" />
+      <Label layoutX="233.0" layoutY="433.0" prefHeight="25.0" prefWidth="181.0" text="Bilan des reservations par mois" />
+      <TableView fx:id="tableLieux" layoutX="44.0" layoutY="57.0" prefHeight="360.0" prefWidth="727.0">
+        <columns>
+          <TableColumn fx:id="colIdVille" prefWidth="60.0" text="idVille" />
+          <TableColumn fx:id="colIdEntreprise" prefWidth="82.0" text="idEntreprise" />
+            <TableColumn fx:id="colLibelleLieu" prefWidth="103.0" text="LibelleLieu" />
+            <TableColumn fx:id="colAdresseLieu" prefWidth="109.0" text="AdresseLieu" />
+            <TableColumn fx:id="colDescriptifLieu" prefWidth="96.0" text="Descriptif" />
+            <TableColumn fx:id="colIdLieu" prefWidth="47.0" text="idLieu" />
+            <TableColumn fx:id="colAnnul" prefWidth="134.0" text="annulationGratuite" />
+            <TableColumn fx:id="colNbEtoiles" prefWidth="75.0" text="nbEtoiles" />
+        </columns>
+      </TableView>
+      <Button fx:id="btnSupprLieu" layoutX="36.0" layoutY="558.0" mnemonicParsing="false" onAction="#supprimerLieuClick" text="Supprimer un lieu" />
+      <Label layoutX="35.0" layoutY="22.0" text="Les Lieux" />
+      <Button fx:id="btnRafraichir" layoutX="35.0" layoutY="445.0" mnemonicParsing="false" onAction="#rafraichirClick" text="Rafraîchir" />
+      <Label fx:id="lblResaMois" layoutX="233.0" layoutY="511.0" text="Nombre de reservation : " />
+      <Label layoutX="233.0" layoutY="550.0" text="Bilan des reservations par annee" />
+      <ComboBox fx:id="cmbBilResAnn" layoutX="233.0" layoutY="583.0" onAction="#bilResaAnnClick" prefHeight="25.0" prefWidth="111.0" />
+      <Label fx:id="lblResaAnn" layoutX="233.0" layoutY="626.0" text="Nombre de reservation : " />
+      <Label layoutX="510.0" layoutY="437.0" text="Chiffre d'affaire par mois" />
+      <Label layoutX="516.0" layoutY="550.0" text="Chiffre d'affaire par annee" />
+      <ComboBox fx:id="cmbCAMois" layoutX="510.0" layoutY="470.0" onAction="#bilCAMoisClick" prefHeight="25.0" prefWidth="122.0" />
+      <Label fx:id="lblCAMois" layoutX="516.0" layoutY="511.0" text="Chiffre d'affaire du lieu :" />
+      <ComboBox fx:id="cmbCAAnn" layoutX="510.0" layoutY="583.0" onAction="#bilCAAnnClick" prefHeight="25.0" prefWidth="122.0" />
+      <Label fx:id="lblCAAnn" layoutX="516.0" layoutY="626.0" text="Chiffre d'affaire du lieu :" />
+      <Button layoutX="34.0" layoutY="596.0" mnemonicParsing="false" onAction="#modifierLieuClick" text="Modifier un lieu" />
+   </children>
+</AnchorPane>
