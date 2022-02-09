@@ -60,10 +60,9 @@ année).
 « contacté »).
 ➢ Bilan des réservations par client, par mois ou par année.
 
+## MEA :
+![Screen MEA](images/MEA2.PNG)
 
-## BDD
+## BDD :
 ![Screen MEA](images/MEA.PNG)
 
-## MEA
-
-![Screen MEA](images/MEA2.PNG)
