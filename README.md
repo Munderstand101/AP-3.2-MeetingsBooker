@@ -1,5 +1,4 @@
-# MeetingsBooker
-
+# AP-3.2-MeetingsBooker
 
 ## Présentation :
 ```
