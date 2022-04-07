@@ -77,13 +77,13 @@ public class FicheFrais {
 	                case "EC":
 	                    return "EC-En cours de saisie";
 	                case "CL":
-	                    return "CL-Clôturée";
+	                    return "CL-Clï¿½turï¿½e";
 	                case "VA":
-	                    return "VA-Validée";
+	                    return "VA-Validï¿½e";
 	                case "MP":
 	                    return "MP-Mise en paiement";
 	                default:
-	                    return "RB Remboursée";
+	                    return "RB Remboursï¿½e";
 	            }
 	                
 	        }
@@ -114,9 +114,9 @@ public class FicheFrais {
 	        
 	        
 	        
-	        public String getNomPrenomUtilisateur() {
-	        	return utilisateur.getNomComplet();
-	        }
+//	        public String getNomPrenomUtilisateur() {
+//	        	return utilisateur.getNomComplet();
+//	        }
 
 	   
 	       public float getTotalDeclare()

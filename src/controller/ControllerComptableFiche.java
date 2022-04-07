@@ -72,9 +72,9 @@ public class ControllerComptableFiche implements Initializable  {
 		
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");     	
 		numFicheLabel.setText("Fiche de frais n� " +uneFiche.getIdFiche() + " - " + uneFiche.getMoisLettre() +  " " + uneFiche.getAnnee());
-		nomPrenomLabel.setText(uneFiche.getNomPrenomUtilisateur());
+		//nomPrenomLabel.setText(uneFiche.getNomPrenomUtilisateur());
 		adresseVisiteurLabel.setText(uneFiche.getUtilisateur().getAdresse());
-		cpVilleVisiteurLabel.setText(uneFiche.getUtilisateur().getCPVille());
+		//cpVilleVisiteurLabel.setText(uneFiche.getUtilisateur().getCPVille());
 		dateEmbaucheLabel.setText("Date d'embauche : "+ dateFormat.format(uneFiche.getUtilisateur().getDateEmbauche()));
 		if (uneFiche.getDateCloture()!=null) {
 			dateClotureLabel.setText("Date cl�ture : "+ dateFormat.format(uneFiche.getDateCloture()));
