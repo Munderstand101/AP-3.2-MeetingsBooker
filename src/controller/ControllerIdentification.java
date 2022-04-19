@@ -75,6 +75,19 @@ public class ControllerIdentification implements Initializable {
 
 			 }
 
+				if(rs.getNString("statut").equals("gerant")) {
+					loader.setLocation(Main.class.getResource("../view/viewLieux.fxml"));
+					Pane lieuxLayout = (Pane) loader.load();
+					Stage lieuxStage = new Stage();
+					Scene lieuxScene = new Scene(lieuxLayout);
+					lieuxStage.setScene(lieuxScene);
+
+					lieuxStage.setTitle("GSB Gestion des frais - visiteur");
+					lieuxStage.initModality(Modality.APPLICATION_MODAL);
+					lieuxStage.show();
+				}
+
+
 			}
 			else {
 				messageConnexionLabel.setText("Login ou mot de passe incorrect !");
@@ -129,11 +142,11 @@ public class ControllerIdentification implements Initializable {
 	 ***/
 	@Override
 	public void initialize(URL location , ResourceBundle ressources) {
-		loginTextField.setText("valentin");
-		mdpPasswordField.setText("valentin");
+		//loginTextField.setText("valentin");
+		//mdpPasswordField.setText("valentin");
 
-		Settings.db_host = "localhost:3307";
-		Settings.db_name = "MeetingsBooker5";
+		Settings.db_host = "localhost:3306";
+		Settings.db_name = "meetingsBooker";
 		Settings.db_user = "root";
 		Settings.db_password = "";
 	}
