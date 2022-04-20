@@ -65,33 +65,6 @@ public class ControllerLieux {
 
     private ObservableList<Integer> moisR = FXCollections.observableArrayList();
 
-    private void remplissagetableViewLieu() {
-        try {
-
-            ResultSet rsLieux = LieuDAO.lesLieu();
-
-            rsLieux.beforeFirst();
-            while (rsLieux.next()) {
-
-                Lieu thelieu = new Lieu(rsLieux.getString(1),rsLieux.getString(2),rsLieux.getString(3),rsLieux.getString(4)
-                        ,rsLieux.getString(5),rsLieux.getString(6));
-
-                data.add(thelieu);
-            }
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        colIdVille.setCellValueFactory(new PropertyValueFactory<Lieu,Integer>("idVille"));
-        colIdEntreprise.setCellValueFactory(new PropertyValueFactory<Lieu,Integer>("idEntreprise"));
-        colLibelleLieu.setCellValueFactory(new PropertyValueFactory<Lieu,String>("libelleLieu"));
-        colAdresseLieu.setCellValueFactory(new PropertyValueFactory<Lieu,String>("adresseLieu"));
-        colDescriptifLieu.setCellValueFactory(new PropertyValueFactory<Lieu,String>("descriptif"));
-        colIdLieu.setCellValueFactory(new PropertyValueFactory<Lieu, Integer>("idLieu"));
-
-        tableLieux.setItems(data);
-    }
 
     private void remplissagetableViewLieux() {
         try {

@@ -8,11 +8,11 @@ import java.util.ArrayList;
 public class LieuDAO {
 
 
-    public static ResultSet lesLieu(){
-        String requete = "SELECT idVille, idLieu, libelleLieu, adresseLieu, descriptif, idEntreprise  FROM lieu order by idEntreprise";
+    //public static ResultSet lesLieu(){
+        //String requete = "SELECT idVille, idLieu, libelleLieu, adresseLieu, descriptif, idEntreprise  FROM lieu order by idEntreprise";
 
-        return DBConnex.getRS(requete, DBConnex.connexion());
-    }
+       // return DBConnex.getRS(requete, DBConnex.connexion());
+   // }
 
     public static ArrayList<Lieu> lesLieux(){
         try {

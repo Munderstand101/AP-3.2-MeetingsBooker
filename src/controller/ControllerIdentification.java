@@ -82,7 +82,7 @@ public class ControllerIdentification implements Initializable {
 					Scene lieuxScene = new Scene(lieuxLayout);
 					lieuxStage.setScene(lieuxScene);
 
-					lieuxStage.setTitle("GSB Gestion des frais - visiteur");
+					lieuxStage.setTitle("MeetingsBooker - Gestion des lieux");
 					lieuxStage.initModality(Modality.APPLICATION_MODAL);
 					lieuxStage.show();
 				}
